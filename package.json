@@ -13,7 +13,11 @@
     "react": "^19.2.0",
     "lucide-react": "^0.555.0",
     "react-dom": "^19.2.0",
-    "react-router-dom": "^6.22.3"
+    "react-router-dom": "^6.22.3",
+    "@vitejs/plugin-react": "^5.1.1",
+    "vite": "^7.2.4",
+    "url": "^0.11.4",
+    "path": "^0.12.7"
   },
   "devDependencies": {
     "@types/node": "^22.14.0",
