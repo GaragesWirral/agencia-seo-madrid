@@ -88,7 +88,7 @@ export const LocalSeoPage: React.FC = () => {
             <div className="bg-gray-50 p-8 rounded-[2rem] border border-gray-100">
                 <h3 className="text-2xl font-bold mb-6">¿Por Qué es Importante?</h3>
                 <p className="text-gray-600 mb-8 leading-relaxed">
-                    El Local Pack se lleva la inmensa mayoría de los clics en <strong>resultados de búsqueda móviles</strong>. Para un negocio local, estar ahí no es opcional. Es captar tráfico de alta conversión.
+                    El Local Pack se lleva la inmensa mayoría de los clics en resultados de búsqueda móviles. Para un negocio local, estar ahí no es opcional. Es captar tráfico de alta conversión.
                 </p>
                 <div className="relative bg-white rounded-xl p-4 shadow-sm border border-gray-200 transform rotate-2 hover:rotate-0 transition-transform duration-500">
                      <div className="flex gap-4 border-b border-gray-100 pb-4 mb-4">
