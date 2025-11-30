@@ -73,10 +73,13 @@ export const RevealText: React.FC<RevealTextProps> = ({
       variants={container}
       initial="hidden"
       animate={isInView ? "visible" : "hidden"}
+      aria-label={text}
     >
       {words.map((word, index) => (
         <motion.span variants={child} key={index} className="mr-[0.25em] inline-block">
           {word}
+          {/* Add a hidden space for SEO crawlers and screen readers to prevent word concatenation */}
+          <span className="sr-only">&nbsp;</span>
         </motion.span>
       ))}
     </Component>
