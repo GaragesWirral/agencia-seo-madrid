@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Testimonial } from '../types';
 
@@ -33,10 +34,12 @@ export const Testimonials: React.FC = () => {
     <section id="cases" className="py-24 md:py-32 bg-white border-b border-gray-100">
       <div className="max-w-[1400px] mx-auto px-4 md:px-8">
         <div className="mb-16 md:mb-24">
-           <span className="text-xs font-mono border border-gray-200 text-gray-500 px-2 py-1 rounded-full uppercase mb-4 inline-block">Resultados</span>
-           <h2 className="text-4xl md:text-5xl font-bold tracking-tight max-w-2xl">
-             Lo que dicen los líderes del sector.
+           <h2 className="text-4xl md:text-5xl font-bold tracking-tight max-w-4xl mb-4">
+             Casos de Éxito: Proyectos SEO que Transformaron Negocios
            </h2>
+           <p className="text-xl text-gray-600">
+             Lo que dicen los líderes del sector.
+           </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">

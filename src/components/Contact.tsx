@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Send } from 'lucide-react';
 import { RevealText } from './ui/RevealText';
@@ -12,7 +13,7 @@ export const Contact: React.FC = () => {
               Hablemos de Tu Proyecto
             </RevealText>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              ¿Listo para llevar tu negocio al siguiente nivel? Completa el formulario y te responderemos en 24 horas.
+              ¿Listo para llevar tu negocio al siguiente nivel? Como expertos en posicionamiento web, sabemos cómo optimizar tu sitio web para que atraiga más clientes potenciales y genere más ingresos. Completa el formulario y te responderemos en 24 horas con una estrategia inicial personalizada para tu negocio.
             </p>
          </div>
 

@@ -1,8 +1,9 @@
+
 export interface ServiceItem {
   id: string;
   title: string;
-  description: string;
-  details: string[];
+  description: string | string[];
+  details?: string[];
   image: string;
 }
 
