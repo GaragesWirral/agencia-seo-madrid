@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+
+import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { RevealText } from '../ui/RevealText';
 import { Search, Globe, CheckCircle2, TrendingUp, Check, Trophy, Layers, Briefcase, LineChart, ChevronDown, ArrowRight, Plus, Minus, BarChart3, Map, Link as LinkIcon, FileText, Laptop, Share2, Megaphone } from 'lucide-react';
@@ -7,6 +8,27 @@ import { Contact } from '../Contact';
 export const SeoPage: React.FC = () => {
   const [expandedService, setExpandedService] = useState<number | null>(null);
   
+  useEffect(() => {
+    // Store previous values
+    const previousTitle = document.title;
+    const metaDescription = document.querySelector('meta[name="description"]');
+    const previousDescription = metaDescription?.getAttribute('content') || "";
+
+    // Set new values
+    document.title = "Posicionamiento Web Madrid";
+    if (metaDescription) {
+      metaDescription.setAttribute('content', "Posicionamiento Web Madrid. Agencia SEO en Madrid especializada en posicionamiento web orgánico. Expertos en posicionamiento SEO y web.");
+    }
+
+    // Restore previous values on cleanup (unmount)
+    return () => {
+      document.title = previousTitle;
+      if (metaDescription) {
+        metaDescription.setAttribute('content', previousDescription);
+      }
+    };
+  }, []);
+
   const handleScrollToContact = (e: React.MouseEvent) => {
     e.preventDefault();
     const contactSection = document.getElementById('contact');

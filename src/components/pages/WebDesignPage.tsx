@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
 import { RevealText } from '../ui/RevealText';
@@ -50,6 +51,17 @@ export const WebDesignPage: React.FC = () => {
   const carousel = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    // SEO Meta Tags
+    const previousTitle = document.title;
+    const metaDescription = document.querySelector('meta[name="description"]');
+    const previousDescription = metaDescription?.getAttribute('content') || "";
+
+    document.title = "Diseño Web Madrid";
+    if (metaDescription) {
+      metaDescription.setAttribute('content', "Diseño Web Madrid. Creamos tu página web y tienda online. Impulsa tu negocio online con el mejor diseño web en Madrid y posicionamiento SEO.");
+    }
+
+    // Carousel Width Calculation
     const updateWidth = () => {
         if (carousel.current) {
             setWidth(carousel.current.scrollWidth - carousel.current.offsetWidth);
@@ -61,6 +73,12 @@ export const WebDesignPage: React.FC = () => {
     const timer = setTimeout(updateWidth, 500);
 
     return () => {
+        // Cleanup SEO
+        document.title = previousTitle;
+        if (metaDescription) {
+            metaDescription.setAttribute('content', previousDescription);
+        }
+        // Cleanup Carousel
         window.removeEventListener('resize', updateWidth);
         clearTimeout(timer);
     };
