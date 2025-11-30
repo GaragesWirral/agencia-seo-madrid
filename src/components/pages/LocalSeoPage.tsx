@@ -1,10 +1,32 @@
-import React from 'react';
+
+import React, { useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { RevealText } from '../ui/RevealText';
 import { MapPin, Star, Navigation, Users, Store, MessageSquare, Phone, Search, BarChart3, CheckCircle2, Globe, ArrowRight } from 'lucide-react';
 import { Contact } from '../Contact';
 
 export const LocalSeoPage: React.FC = () => {
+  useEffect(() => {
+    // Store previous values
+    const previousTitle = document.title;
+    const metaDescription = document.querySelector('meta[name="description"]');
+    const previousDescription = metaDescription?.getAttribute('content') || "";
+
+    // Set new values
+    document.title = "SEO Local en Madrid";
+    if (metaDescription) {
+      metaDescription.setAttribute('content', "SEO Local en Madrid. Mejora el posicionamiento y visibilidad de tu sitio web en la búsqueda local. Optimizar Google My Business con una agencia SEO local para mejores resultados.");
+    }
+
+    // Restore previous values on cleanup (unmount)
+    return () => {
+      document.title = previousTitle;
+      if (metaDescription) {
+        metaDescription.setAttribute('content', previousDescription);
+      }
+    };
+  }, []);
+
   const handleScrollToContact = (e: React.MouseEvent) => {
     e.preventDefault();
     const contactSection = document.getElementById('contact');

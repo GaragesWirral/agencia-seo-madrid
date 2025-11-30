@@ -1,10 +1,32 @@
-import React from 'react';
+
+import React, { useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { RevealText } from '../ui/RevealText';
 import { ShieldCheck, RefreshCw, Clock, Server, AlertTriangle, CheckCircle2, Activity, Wrench, TrendingUp, Lock, Database, Search, ArrowRight } from 'lucide-react';
 import { Contact } from '../Contact';
 
 export const MaintenancePage: React.FC = () => {
+  useEffect(() => {
+    // Store previous values
+    const previousTitle = document.title;
+    const metaDescription = document.querySelector('meta[name="description"]');
+    const previousDescription = metaDescription?.getAttribute('content') || "";
+
+    // Set new values
+    document.title = "Mantenimiento web";
+    if (metaDescription) {
+      metaDescription.setAttribute('content', "Mantenimiento web: Asegura el éxito de tu sitio web con un servicio de mantenimiento web profesional. Actualización y optimización web continua.");
+    }
+
+    // Restore previous values on cleanup (unmount)
+    return () => {
+      document.title = previousTitle;
+      if (metaDescription) {
+        metaDescription.setAttribute('content', previousDescription);
+      }
+    };
+  }, []);
+
   const handleScrollToContact = (e: React.MouseEvent) => {
     e.preventDefault();
     const contactSection = document.getElementById('contact');
