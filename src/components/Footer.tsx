@@ -48,9 +48,9 @@ export const Footer: React.FC = () => {
         <div className="border-t border-gray-800 pt-10 flex flex-col md:flex-row justify-between items-center text-xs text-gray-500 gap-4">
           <p>© 2024 Organic Pulse SEO. Todos los derechos reservados.</p>
           <div className="flex gap-6">
-            <a href="#" className="hover:text-white transition-colors">Privacidad</a>
-            <a href="#" className="hover:text-white transition-colors">Cookies</a>
-            <a href="#" className="hover:text-white transition-colors">Aviso Legal</a>
+            <Link to="/privacidad" className="hover:text-white transition-colors">Privacidad</Link>
+            <Link to="/cookies" className="hover:text-white transition-colors">Cookies</Link>
+            <Link to="/aviso-legal" className="hover:text-white transition-colors">Aviso Legal</Link>
           </div>
         </div>
       </div>
