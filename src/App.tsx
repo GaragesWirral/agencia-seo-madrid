@@ -11,6 +11,7 @@ import { LocalSeoPage } from './components/pages/LocalSeoPage';
 import { PrivacyPage } from './components/pages/PrivacyPage';
 import { CookiesPage } from './components/pages/CookiesPage';
 import { LegalPage } from './components/pages/LegalPage';
+import { AboutPage } from './components/pages/AboutPage';
 import { Footer } from './components/Footer';
 import { StickyCTA } from './components/StickyCTA';
 
@@ -46,6 +47,7 @@ const App: React.FC = () => {
             <Route path="/mantenimiento-web" element={<MaintenancePage />} />
             <Route path="/google-ads" element={<GoogleAdsPage />} />
             <Route path="/seo-local" element={<LocalSeoPage />} />
+            <Route path="/sobre-nosotros" element={<AboutPage />} />
             
             {/* Legal Pages */}
             <Route path="/privacidad" element={<PrivacyPage />} />
