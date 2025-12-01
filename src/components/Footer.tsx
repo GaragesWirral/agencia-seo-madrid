@@ -30,7 +30,6 @@ export const Footer: React.FC = () => {
               <h4 className="font-bold mb-4">Empresa</h4>
               <ul className="space-y-2 text-gray-400 text-sm">
                 <li><Link to="/sobre-nosotros" className="hover:text-white transition-colors">Sobre Nosotros</Link></li>
-                <li><a href="#" className="hover:text-white transition-colors">Casos de Éxito</a></li>
                 <li><a href="/#contact" className="hover:text-white transition-colors">Contacto</a></li>
               </ul>
             </div>
@@ -46,7 +45,7 @@ export const Footer: React.FC = () => {
         </div>
         
         <div className="border-t border-gray-800 pt-10 flex flex-col md:flex-row justify-between items-center text-xs text-gray-500 gap-4">
-          <p>© 2024 Organic Pulse SEO. Todos los derechos reservados.</p>
+          <p>© 2025 Organic Pulse SEO. Todos los derechos reservados.</p>
           <div className="flex gap-6">
             <Link to="/privacidad" className="hover:text-white transition-colors">Privacidad</Link>
             <Link to="/cookies" className="hover:text-white transition-colors">Cookies</Link>
