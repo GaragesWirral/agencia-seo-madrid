@@ -21,28 +21,28 @@ const projects: Project[] = [
     title: "Database School",
     category: "EdTech Platform",
     year: "2024",
-    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2426&auto=format&fit=crop" 
+    image: "/images/web design example 1.jpg" 
   },
   {
     id: 2,
     title: "Elios Finance",
     category: "Fintech Website",
     year: "2023",
-    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2670&auto=format&fit=crop" 
+    image: "/images/web design example 2.jpg" 
   },
   {
     id: 3,
     title: "Webflow Campaign",
     category: "Marketing Landing Page",
     year: "2024",
-    image: "https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?q=80&w=2669&auto=format&fit=crop" 
+    image: "/images/web design example 3.jpg" 
   },
   {
     id: 4,
     title: "Transform 9",
     category: "AI Healthcare SaaS",
     year: "2024",
-    image: "https://images.unsplash.com/photo-1558655146-d09347e92766?q=80&w=2664&auto=format&fit=crop" 
+    image: "/images/web design examples 4.jpg" 
   }
 ];
 
