@@ -16,7 +16,7 @@ const services: ServiceItem[] = [
       "Formularios optimizados que generan más leads",
       "Diseño responsive perfecto en todos los dispositivos"
     ],
-    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2426&auto=format&fit=crop"
+    image: "/images/Diseño-web-que-convierte.png"
   },
   {
     id: "02",
@@ -31,7 +31,7 @@ const services: ServiceItem[] = [
     id: "03",
     title: "SEO Local: Domina tu Mercado en Madrid",
     description: "Si tienes un negocio local en Madrid, el SEO local es fundamental. Optimizamos tu presencia en Google Maps y resultados de búsqueda locales para que aparezcas cuando los clientes cercanos te buscan. Desde restaurantes hasta clínicas dentales, ayudamos a negocios locales a aumentar su visibilidad y atraer más clientes.",
-    image: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=2670&auto=format&fit=crop"
+    image: "/images/agenciaseomadridmejoras.jpg"
   },
   {
     id: "04",
@@ -52,7 +52,7 @@ const services: ServiceItem[] = [
     id: "06",
     title: "Publicidad de Pago que Funciona",
     description: "Las campañas de Google Ads complementan tu estrategia de posicionamiento SEO en Madrid, generando resultados inmediatos mientras trabajamos en tu posicionamiento orgánico a largo plazo.",
-    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2670&auto=format&fit=crop"
+    image: "/images/google-ads-resultados.png"
   }
 ];
 
