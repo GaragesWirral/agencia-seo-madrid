@@ -1,4 +1,6 @@
+
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 export const Footer: React.FC = () => {
   return (
@@ -17,26 +19,27 @@ export const Footer: React.FC = () => {
             <div>
               <h4 className="font-bold mb-4">Servicios</h4>
               <ul className="space-y-2 text-gray-400 text-sm">
-                <li><a href="#" className="hover:text-white">Auditoría SEO</a></li>
-                <li><a href="#" className="hover:text-white">Link Building</a></li>
-                <li><a href="#" className="hover:text-white">Contenidos</a></li>
-                <li><a href="#" className="hover:text-white">SEO Local</a></li>
+                <li><Link to="/diseno-web" className="hover:text-white transition-colors">Diseño Web</Link></li>
+                <li><Link to="/posicionamiento-seo" className="hover:text-white transition-colors">Posicionamiento SEO</Link></li>
+                <li><Link to="/mantenimiento-web" className="hover:text-white transition-colors">Mantenimiento Web</Link></li>
+                <li><Link to="/google-ads" className="hover:text-white transition-colors">Google Ads</Link></li>
+                <li><Link to="/seo-local" className="hover:text-white transition-colors">SEO Local</Link></li>
               </ul>
             </div>
             <div>
               <h4 className="font-bold mb-4">Empresa</h4>
               <ul className="space-y-2 text-gray-400 text-sm">
-                <li><a href="#" className="hover:text-white">Sobre Nosotros</a></li>
-                <li><a href="#" className="hover:text-white">Casos de Éxito</a></li>
-                <li><a href="#" className="hover:text-white">Contacto</a></li>
+                <li><a href="#" className="hover:text-white transition-colors">Sobre Nosotros</a></li>
+                <li><a href="#" className="hover:text-white transition-colors">Casos de Éxito</a></li>
+                <li><a href="/#contact" className="hover:text-white transition-colors">Contacto</a></li>
               </ul>
             </div>
             <div>
               <h4 className="font-bold mb-4">Social</h4>
               <ul className="space-y-2 text-gray-400 text-sm">
-                <li><a href="#" className="hover:text-white">LinkedIn</a></li>
-                <li><a href="#" className="hover:text-white">Twitter / X</a></li>
-                <li><a href="#" className="hover:text-white">Instagram</a></li>
+                <li><a href="#" className="hover:text-white transition-colors">LinkedIn</a></li>
+                <li><a href="#" className="hover:text-white transition-colors">Twitter / X</a></li>
+                <li><a href="#" className="hover:text-white transition-colors">Instagram</a></li>
               </ul>
             </div>
           </div>
@@ -45,9 +48,9 @@ export const Footer: React.FC = () => {
         <div className="border-t border-gray-800 pt-10 flex flex-col md:flex-row justify-between items-center text-xs text-gray-500 gap-4">
           <p>© 2024 Organic Pulse SEO. Todos los derechos reservados.</p>
           <div className="flex gap-6">
-            <a href="#" className="hover:text-white">Privacidad</a>
-            <a href="#" className="hover:text-white">Cookies</a>
-            <a href="#" className="hover:text-white">Aviso Legal</a>
+            <a href="#" className="hover:text-white transition-colors">Privacidad</a>
+            <a href="#" className="hover:text-white transition-colors">Cookies</a>
+            <a href="#" className="hover:text-white transition-colors">Aviso Legal</a>
           </div>
         </div>
       </div>
