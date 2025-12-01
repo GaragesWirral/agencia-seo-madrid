@@ -51,10 +51,10 @@ export const CookiesPage: React.FC = () => {
                     En cualquier momento podrá ejercer su derecho de desactivación o eliminación de cookies de este sitio web. Estas acciones se realizan de forma diferente en función del navegador que esté usando:
                 </p>
                 <ul className="list-disc pl-5 space-y-2 mt-4">
-                    <li><strong>Chrome:</strong> Configuración -> Privacidad y seguridad -> Cookies y otros datos de sitios.</li>
-                    <li><strong>Firefox:</strong> Opciones -> Privacidad y seguridad.</li>
-                    <li><strong>Safari:</strong> Preferencias -> Privacidad.</li>
-                    <li><strong>Edge:</strong> Configuración -> Cookies y permisos del sitio.</li>
+                    <li><strong>Chrome:</strong> Configuración &rarr; Privacidad y seguridad &rarr; Cookies y otros datos de sitios.</li>
+                    <li><strong>Firefox:</strong> Opciones &rarr; Privacidad y seguridad.</li>
+                    <li><strong>Safari:</strong> Preferencias &rarr; Privacidad.</li>
+                    <li><strong>Edge:</strong> Configuración &rarr; Cookies y permisos del sitio.</li>
                 </ul>
             </div>
 
