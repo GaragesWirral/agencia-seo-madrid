@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 import { Menu, X, ChevronDown } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -16,7 +17,7 @@ const navLinks: NavItem[] = [
       { label: 'SEO Local', href: '/seo-local' },
     ]
   },
-  { label: 'Blog', href: '/#blog' },
+  { label: 'Blog', href: '/blog' },
   { label: 'Contacto', href: '/#contact' },
 ];
 

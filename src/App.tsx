@@ -8,6 +8,7 @@ import { SeoPage } from './components/pages/SeoPage';
 import { MaintenancePage } from './components/pages/MaintenancePage';
 import { GoogleAdsPage } from './components/pages/GoogleAdsPage';
 import { LocalSeoPage } from './components/pages/LocalSeoPage';
+import { BlogPage } from './components/pages/BlogPage';
 import { PrivacyPage } from './components/pages/PrivacyPage';
 import { CookiesPage } from './components/pages/CookiesPage';
 import { LegalPage } from './components/pages/LegalPage';
@@ -47,6 +48,7 @@ const App: React.FC = () => {
             <Route path="/mantenimiento-web" element={<MaintenancePage />} />
             <Route path="/google-ads" element={<GoogleAdsPage />} />
             <Route path="/seo-local" element={<LocalSeoPage />} />
+            <Route path="/blog" element={<BlogPage />} />
             <Route path="/sobre-nosotros" element={<AboutPage />} />
             
             {/* Legal Pages */}
