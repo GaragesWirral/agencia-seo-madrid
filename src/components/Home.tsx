@@ -1,7 +1,6 @@
 import React from 'react';
 import { Hero } from './Hero';
 import { Marquee } from './Marquee';
-import { Problem } from './Problem';
 import { AgencyDifference } from './AgencyDifference';
 import { Services } from './Services';
 import { Testimonials } from './Testimonials';
@@ -13,7 +12,6 @@ export const Home: React.FC = () => {
     <>
       <Hero />
       <Marquee />
-      <Problem />
       <SeoWhyHiring />
       <AgencyDifference />
       <Services />
