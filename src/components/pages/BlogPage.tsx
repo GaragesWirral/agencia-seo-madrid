@@ -236,35 +236,8 @@ export const BlogPage: React.FC = () => {
         </div>
       </section>
 
-      {/* Newsletter Section */}
-      <section className="bg-gray-50 py-24 px-4 md:px-8 border-t border-gray-200">
-         <div className="max-w-[1400px] mx-auto bg-black text-white rounded-[2.5rem] p-8 md:p-20 relative overflow-hidden">
-             {/* Decor */}
-             <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-gray-800 to-transparent opacity-20 pointer-events-none" />
-             
-             <div className="relative z-10 flex flex-col lg:flex-row items-center gap-12">
-                 <div className="lg:w-1/2">
-                     <h2 className="text-3xl md:text-5xl font-bold mb-4">Suscríbete a nuestra newsletter</h2>
-                     <p className="text-gray-400 text-lg">Recibe consejos de SEO, análisis de mercado y novedades de la agencia una vez al mes. Sin spam, prometido.</p>
-                 </div>
-                 <div className="lg:w-1/2 w-full">
-                     <form className="flex flex-col sm:flex-row gap-4" onSubmit={(e) => e.preventDefault()}>
-                         <input 
-                            type="email" 
-                            placeholder="tu@email.com" 
-                            className="flex-grow bg-white/10 border border-white/20 rounded-full px-6 py-4 text-white placeholder-gray-500 focus:outline-none focus:bg-white/20 transition-colors"
-                         />
-                         <button className="bg-white text-black px-8 py-4 rounded-full font-bold hover:bg-gray-200 transition-colors">
-                             Suscribirse
-                         </button>
-                     </form>
-                 </div>
-             </div>
-         </div>
-      </section>
-
       {/* Reuse Contact Section */}
-      <div className="bg-white">
+      <div className="bg-gray-50">
         <Contact />
       </div>
     </div>
