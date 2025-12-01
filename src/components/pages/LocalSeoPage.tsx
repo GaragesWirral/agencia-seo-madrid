@@ -111,27 +111,11 @@ export const LocalSeoPage: React.FC = () => {
                 <p className="text-gray-600 mb-8 leading-relaxed">
                     El Local Pack se lleva la inmensa mayoría de los clics en resultados de búsqueda móviles. Para un negocio local, estar ahí no es opcional. Es captar tráfico de alta conversión.
                 </p>
-                <div className="relative bg-white rounded-xl p-4 shadow-sm border border-gray-200 transform rotate-2 hover:rotate-0 transition-transform duration-500">
-                     <div className="flex gap-4 border-b border-gray-100 pb-4 mb-4">
-                        <div className="w-full bg-gray-100 rounded-full h-8 px-4 flex items-center text-gray-400 text-xs">
-                            búsqueda cerca de mí...
-                        </div>
-                    </div>
-                    <div className="flex gap-3 mb-2">
-                        <div className="w-12 h-12 bg-gray-200 rounded-md shrink-0"></div>
-                        <div className="w-full">
-                            <div className="h-4 bg-black/10 rounded w-3/4 mb-2"></div>
-                            <div className="h-3 bg-black/5 rounded w-1/2"></div>
-                        </div>
-                    </div>
-                    <div className="flex gap-3">
-                        <div className="w-12 h-12 bg-gray-200 rounded-md shrink-0"></div>
-                        <div className="w-full">
-                            <div className="h-4 bg-black/10 rounded w-3/4 mb-2"></div>
-                            <div className="h-3 bg-black/5 rounded w-1/2"></div>
-                        </div>
-                    </div>
-                </div>
+                <img 
+                    src="https://images.unsplash.com/photo-1524661135-423995f22d0b?q=80&w=2674&auto=format&fit=crop" 
+                    alt="Búsqueda en Google Maps en móvil"
+                    className="w-full rounded-2xl shadow-lg border border-gray-200"
+                />
             </div>
         </div>
       </section>
