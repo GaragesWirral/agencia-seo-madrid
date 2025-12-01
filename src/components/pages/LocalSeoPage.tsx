@@ -112,8 +112,8 @@ export const LocalSeoPage: React.FC = () => {
                     El Local Pack se lleva la inmensa mayoría de los clics en resultados de búsqueda móviles. Para un negocio local, estar ahí no es opcional. Es captar tráfico de alta conversión.
                 </p>
                 <img 
-                    src="https://images.unsplash.com/photo-1524661135-423995f22d0b?q=80&w=2674&auto=format&fit=crop" 
-                    alt="Búsqueda en Google Maps en móvil"
+                    src="/images/localseo.jpg" 
+                    alt="SEO Local Estrategia y Posicionamiento"
                     className="w-full rounded-2xl shadow-lg border border-gray-200"
                 />
             </div>
