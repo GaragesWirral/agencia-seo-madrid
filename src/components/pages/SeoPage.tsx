@@ -4,6 +4,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { RevealText } from '../ui/RevealText';
 import { Search, Globe, CheckCircle2, TrendingUp, Check, Trophy, Layers, Briefcase, LineChart, ChevronDown, ArrowRight, Plus, Minus, BarChart3, Map, Link as LinkIcon, FileText, Laptop, Share2, Megaphone } from 'lucide-react';
 import { Contact } from '../Contact';
+import { Link } from 'react-router-dom';
 
 export const SeoPage: React.FC = () => {
   const [expandedService, setExpandedService] = useState<number | null>(null);
@@ -111,7 +112,7 @@ export const SeoPage: React.FC = () => {
               Posicionamiento SEO Madrid: <br/> Agencia SEO en Madrid Especializada
             </RevealText>
             <p className="text-xl md:text-2xl text-gray-400 max-w-3xl leading-relaxed font-light mb-10">
-              Maximizamos tu visibilidad en Google con estrategias de posicionamiento web orgánico diseñadas para convertir visitas en clientes. Como agencia SEO Madrid especializada en posicionamiento web, trabajamos con expertos en posicionamiento web orgánico para que tu negocio domine los resultados de búsqueda.
+              Maximizamos tu visibilidad en Google con estrategias de posicionamiento web orgánico diseñadas para convertir visitas en clientes. Como <Link to="/" className="text-white underline decoration-gray-600 hover:decoration-white transition-all">agencia SEO Madrid</Link> especializada en posicionamiento web, trabajamos con expertos en posicionamiento web orgánico para que tu negocio domine los resultados de búsqueda.
             </p>
             
             <motion.a 
@@ -134,7 +135,7 @@ export const SeoPage: React.FC = () => {
         <div className="mb-16">
             <h2 className="text-3xl md:text-5xl font-bold mb-6">¿Por qué contratar una agencia SEO en Madrid especializada?</h2>
             <p className="text-gray-600 max-w-3xl text-lg leading-relaxed mb-6">
-                No basta con estar en internet. En un mundo digital cada vez más competitivo, necesitas una estrategia técnica y de contenidos que supere a tu competencia en los motores de búsqueda. Como agencia de posicionamiento SEO, combinamos técnicas de SEO avanzadas con estrategias de marketing digital para mejorar el posicionamiento web de forma sostenible.
+                No basta con estar en internet. En un mundo digital cada vez más competitivo, necesitas una estrategia técnica y de contenidos que supere a tu competencia en los motores de búsqueda. Como agencia de posicionamiento SEO, combinamos técnicas de SEO avanzadas con estrategias de <Link to="/google-ads" className="text-black underline decoration-gray-300 hover:decoration-black transition-all">marketing digital</Link> para mejorar el posicionamiento web de forma sostenible.
             </p>
             <p className="text-gray-600 max-w-2xl text-lg font-medium">
                 Una agencia especializada en SEO aporta experiencia técnica, conocimiento del entorno digital y una estrategia personalizada.
@@ -333,7 +334,7 @@ export const SeoPage: React.FC = () => {
                     <Laptop className="w-10 h-10 text-black mb-6" />
                     <h3 className="text-2xl font-bold mb-4">Diseño de páginas web</h3>
                     <p className="text-gray-600 leading-relaxed">
-                        Si necesitas crear tu sitio web desde cero o renovarlo, ofrecemos diseño web y web a medida optimizada para buscadores desde el primer día.
+                        Si necesitas crear tu sitio web desde cero o renovarlo, ofrecemos <Link to="/diseno-web" className="text-black underline decoration-gray-300 hover:decoration-black transition-all">diseño web</Link> y web a medida optimizada para buscadores desde el primer día.
                     </p>
                 </div>
                 <div className="p-8 bg-gray-50 rounded-3xl border border-gray-100 hover:shadow-lg transition-all duration-300">
@@ -365,7 +366,7 @@ export const SeoPage: React.FC = () => {
                 Contratar una agencia SEO en Madrid nunca fue tan fácil
             </h2>
             <p className="text-xl text-gray-600 mb-16 max-w-3xl mx-auto leading-relaxed">
-                Convierte tu página web en una herramienta de ventas. Trabajamos para que tu web sea la referencia de tu sector. Si necesitas una agencia de diseño web que también entienda posicionamiento SEO y SEM, ofrecemos servicios completos.
+                Convierte tu página web en una herramienta de ventas. Trabajamos para que tu web sea la referencia de tu sector. Si necesitas una <Link to="/diseno-web" className="text-black underline decoration-gray-300 hover:decoration-black transition-all">agencia de diseño web</Link> que también entienda posicionamiento SEO y SEM, ofrecemos servicios completos.
             </p>
 
             <div className="flex flex-wrap justify-center gap-6 mb-16">
