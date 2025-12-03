@@ -3,6 +3,7 @@ import React from 'react';
 import { MessageSquare, Target, FileText } from 'lucide-react';
 import { RevealText } from './ui/RevealText';
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 
 export const AgencyDifference: React.FC = () => {
   return (
@@ -47,7 +48,7 @@ export const AgencyDifference: React.FC = () => {
                 </div>
                 <h3 className="text-2xl font-bold mb-4">Estrategias Personalizadas</h3>
                 <p className="text-gray-600 leading-relaxed">
-                    Planes de SEO adaptados para Amazon, Local y éxito Web. Alineamos nuestros esfuerzos con tus objetivos para asegurar que tu marca destaque y crezca en su nicho. Tu estrategia es única, diseñada específicamente para las necesidades de tu negocio.
+                    Planes de SEO adaptados para Amazon, <Link to="/seo-local" className="text-black font-medium underline decoration-gray-300 hover:decoration-black transition-all">SEO Local</Link> y éxito Web. Alineamos nuestros esfuerzos con tus objetivos para asegurar que tu marca destaque y crezca en su nicho. Tu estrategia es única, diseñada específicamente para las necesidades de tu negocio.
                 </p>
             </div>
 

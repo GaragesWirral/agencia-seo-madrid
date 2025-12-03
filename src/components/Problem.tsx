@@ -2,6 +2,7 @@
 import React from 'react';
 import { RevealText } from './ui/RevealText';
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 
 export const Problem: React.FC = () => {
   return (
@@ -21,7 +22,7 @@ export const Problem: React.FC = () => {
           
           <div className="flex flex-col gap-8 md:mt-4">
             <RevealText tag="p" delay={0.2} className="text-xl text-gray-400 leading-relaxed">
-              El SEO moderno no va de engañar a Google o repetir palabras clave mil veces. Se trata de crear la mejor respuesta posible para la pregunta del usuario, servida en una plataforma técnicamente impecable.
+              El SEO moderno no va de engañar a Google o repetir palabras clave mil veces. Se trata de crear la mejor respuesta posible para la pregunta del usuario, servida en un <Link to="/diseno-web" className="text-white underline decoration-gray-600 hover:decoration-white transition-all">diseño web optimizado</Link>.
             </RevealText>
             
             <motion.div 

@@ -1,7 +1,9 @@
+
 import React from 'react';
 import { RevealText } from './ui/RevealText';
 import { ArrowDown, Star } from 'lucide-react';
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 
 export const Hero: React.FC = () => {
   const handleScrollToContact = (e: React.MouseEvent) => {
@@ -77,7 +79,7 @@ export const Hero: React.FC = () => {
           
           {/* Value Prop - Single Line & Clear */}
           <RevealText tag="p" delay={0.4} className="text-xl text-gray-500 max-w-2xl leading-relaxed">
-            Transformamos tráfico en ingresos mediante estrategias técnicas, contenido semántico y autoridad de marca.
+            Transformamos tráfico en ingresos mediante <Link to="/posicionamiento-seo" className="text-black underline decoration-gray-300 hover:decoration-black transition-all">estrategias de SEO</Link> avanzadas, contenido semántico y autoridad de marca.
           </RevealText>
         </div>
 
