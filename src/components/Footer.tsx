@@ -3,6 +3,14 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 export const Footer: React.FC = () => {
+  const handleContactClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+    const contactSection = document.getElementById('contact');
+    if (contactSection) {
+      contactSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <footer className="bg-[#111] text-white pt-20 pb-10 px-4 md:px-8">
       <div className="max-w-[1400px] mx-auto">
@@ -30,7 +38,7 @@ export const Footer: React.FC = () => {
               <h4 className="font-bold mb-4">Empresa</h4>
               <ul className="space-y-2 text-gray-400 text-sm">
                 <li><Link to="/sobre-nosotros" className="hover:text-white transition-colors">Sobre Nosotros</Link></li>
-                <li><a href="/#contact" className="hover:text-white transition-colors">Contacto</a></li>
+                <li><a href="#contact" onClick={handleContactClick} className="hover:text-white transition-colors">Contacto</a></li>
               </ul>
             </div>
             <div>
