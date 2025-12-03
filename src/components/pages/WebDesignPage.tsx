@@ -169,21 +169,13 @@ export const WebDesignPage: React.FC = () => {
                         key={project.id} 
                         className="min-w-[85vw] md:min-w-[700px] relative group"
                     >
-                        <div className="relative overflow-hidden rounded-3xl aspect-[16/10] mb-8 border border-gray-200 bg-white shadow-lg group-hover:shadow-2xl transition-all duration-500">
+                        <div className="relative overflow-hidden rounded-3xl aspect-[16/10] border border-gray-200 bg-white shadow-lg group-hover:shadow-2xl transition-all duration-500">
                             <div className="absolute inset-0 bg-black/0 group-hover:bg-black/0 transition-colors duration-500 z-10 pointer-events-none" />
                             <img 
                                 src={project.image} 
                                 alt={project.title} 
                                 className="w-full h-full object-cover object-top transition-transform duration-1000 group-hover:scale-105 pointer-events-none select-none" 
                             />
-                        </div>
-
-                        <div className="flex justify-between items-start px-2">
-                            <div>
-                                <h3 className="text-3xl font-bold mb-2">{project.title}</h3>
-                                <p className="text-gray-500 font-mono text-sm uppercase tracking-widest">{project.category}</p>
-                            </div>
-                            <span className="text-gray-400 font-mono text-sm border border-gray-200 px-3 py-1 rounded-full">{project.year}</span>
                         </div>
                     </motion.div>
                     ))}
