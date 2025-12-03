@@ -64,13 +64,22 @@ export const WebDesignPage: React.FC = () => {
     // Carousel Width Calculation
     const updateWidth = () => {
         if (carousel.current) {
+            // Calculate total scrollable width minus the visible width
+            // This determines how far left we can drag the content
             setWidth(carousel.current.scrollWidth - carousel.current.offsetWidth);
         }
     };
 
+    // Initial calculation
     updateWidth();
+    
+    // Recalculate on resize
     window.addEventListener('resize', updateWidth);
-    const timer = setTimeout(updateWidth, 500);
+    
+    // Safety checks for layout shifts (ensures width is correct after rendering)
+    const timer1 = setTimeout(updateWidth, 100);
+    const timer2 = setTimeout(updateWidth, 500);
+    const timer3 = setTimeout(updateWidth, 1000);
 
     return () => {
         // Cleanup SEO
@@ -80,7 +89,9 @@ export const WebDesignPage: React.FC = () => {
         }
         // Cleanup Carousel
         window.removeEventListener('resize', updateWidth);
-        clearTimeout(timer);
+        clearTimeout(timer1);
+        clearTimeout(timer2);
+        clearTimeout(timer3);
     };
   }, []);
 
@@ -151,7 +162,7 @@ export const WebDesignPage: React.FC = () => {
                     whileTap={{ cursor: "grabbing" }}
                     dragElastic={0.2}
                     dragTransition={{ bounceStiffness: 600, bounceDamping: 20 }}
-                    className="flex gap-8 md:gap-12"
+                    className="flex gap-8 md:gap-12 pr-8 md:pr-12"
                 >
                     {projects.map((project) => (
                     <motion.div 
