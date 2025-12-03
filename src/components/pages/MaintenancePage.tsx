@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import { RevealText } from '../ui/RevealText';
 import { ShieldCheck, RefreshCw, Clock, Server, AlertTriangle, CheckCircle2, Activity, Wrench, TrendingUp, Lock, Database, Search, ArrowRight } from 'lucide-react';
 import { Contact } from '../Contact';
+import { Link } from 'react-router-dom';
 
 export const MaintenancePage: React.FC = () => {
   useEffect(() => {
@@ -115,7 +116,7 @@ export const MaintenancePage: React.FC = () => {
                     <div className="flex gap-4 items-start">
                         <TrendingUp className="w-6 h-6 text-red-500 flex-shrink-0 mt-1" />
                         <div>
-                            <h4 className="font-bold text-red-900">Pérdida de Posicionamiento SEO</h4>
+                            <h4 className="font-bold text-red-900">Pérdida de <Link to="/posicionamiento-seo" className="underline decoration-red-300 hover:text-red-700 transition-colors">Posicionamiento SEO</Link></h4>
                             <p className="text-red-700 text-sm leading-relaxed">Los tiempos de carga lentos y una web sin optimización afectan directamente tu ranking en Google.</p>
                         </div>
                     </div>
@@ -223,7 +224,7 @@ export const MaintenancePage: React.FC = () => {
                     <Activity className="w-10 h-10 text-black mb-6" />
                     <h3 className="text-xl font-bold mb-3">Optimización WPO</h3>
                     <p className="text-sm text-gray-600 leading-relaxed">
-                        Limpieza de base de datos y caché para asegurar que tu web cargue rápido. El rendimiento afecta directamente a tu SEO y conversiones.
+                        Limpieza de base de datos y caché para asegurar que tu web cargue rápido. El rendimiento afecta directamente a tu <Link to="/posicionamiento-seo" className="text-black underline decoration-gray-300 hover:decoration-black transition-all">SEO</Link> y conversiones.
                     </p>
                 </div>
 
@@ -297,7 +298,7 @@ export const MaintenancePage: React.FC = () => {
                         <div className="w-12 h-12 bg-white rounded-xl flex items-center justify-center shadow-sm text-black font-bold flex-shrink-0">XP</div>
                         <div>
                             <h4 className="font-bold text-lg">Experiencia en WordPress</h4>
-                            <p className="text-gray-600 text-sm">Conocemos cada aspecto del desarrollo y programación web.</p>
+                            <p className="text-gray-600 text-sm">Conocemos cada aspecto del <Link to="/diseno-web" className="text-black underline decoration-gray-300 hover:decoration-black transition-all">desarrollo y programación web</Link>.</p>
                         </div>
                     </div>
                     <div className="flex gap-4">
