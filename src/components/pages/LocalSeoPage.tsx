@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import { RevealText } from '../ui/RevealText';
 import { MapPin, Star, Navigation, Users, Store, MessageSquare, Phone, Search, BarChart3, CheckCircle2, Globe, ArrowRight } from 'lucide-react';
 import { Contact } from '../Contact';
+import { Link } from 'react-router-dom';
 
 export const LocalSeoPage: React.FC = () => {
   useEffect(() => {
@@ -216,7 +217,7 @@ export const LocalSeoPage: React.FC = () => {
                     <h3 className="text-2xl font-bold text-gray-200 border-b border-gray-800 pb-4">Estrategia de Contenido</h3>
                     <ul className="space-y-4 text-gray-400">
                         <li className="flex gap-3"><span className="text-white font-bold">01.</span> Páginas de ubicación específicas para tu <strong>perfil de empresa de Google</strong>.</li>
-                        <li className="flex gap-3"><span className="text-white font-bold">02.</span> Blog con temas y noticias locales</li>
+                        <li className="flex gap-3"><span className="text-white font-bold">02.</span> <Link to="/blog" className="text-gray-400 hover:text-white underline decoration-gray-700 transition-all">Blog</Link> con temas y noticias locales</li>
                         <li className="flex gap-3"><span className="text-white font-bold">03.</span> FAQs para búsquedas long-tail</li>
                         <li className="flex gap-3"><span className="text-white font-bold">04.</span> Casos de éxito locales en la gestión de <strong>Google My Business</strong>.</li>
                     </ul>
@@ -291,7 +292,9 @@ export const LocalSeoPage: React.FC = () => {
                     <li className="flex gap-4">
                         <CheckCircle2 className="w-6 h-6 text-black shrink-0" />
                         <div>
-                            <span className="font-bold block text-lg">Google Ads Local</span>
+                            <span className="font-bold block text-lg">
+                                <Link to="/google-ads" className="hover:underline decoration-black underline-offset-2 transition-all">Google Ads Local</Link>
+                            </span>
                             <span className="text-gray-600 text-sm">Complementamos orgánico con campañas geolocalizadas para visibilidad inmediata.</span>
                         </div>
                     </li>
@@ -347,7 +350,7 @@ export const LocalSeoPage: React.FC = () => {
             <div>
                 <h3 className="text-3xl font-bold mb-6">¿Por Qué Contratar una Agencia?</h3>
                 <p className="text-gray-400 mb-6 leading-relaxed">
-                    Hacer SEO local correctamente requiere experiencia técnica y conocimiento del mercado. Nuestra agencia combina experiencia probada, conocimiento de Madrid y una <strong>estrategia de SEO personalizada para mejorar tu perfil de empresa en Google.</strong>
+                    Hacer SEO local correctamente requiere experiencia técnica y conocimiento del mercado. Nuestra agencia combina experiencia probada, conocimiento de Madrid y una <strong><Link to="/posicionamiento-seo" className="text-white underline decoration-green-500 hover:decoration-white transition-all">estrategia de SEO personalizada</Link> para mejorar tu perfil de empresa en Google.</strong>
                 </p>
                 <p className="text-gray-400 leading-relaxed border-l-2 border-green-500 pl-4">
                     El SEO local es el proceso más efectivo para empresas con presencia física. No compites contra toda España, sino contra tu barrio. Dominar tu área local es completamente alcanzable.
@@ -361,7 +364,7 @@ export const LocalSeoPage: React.FC = () => {
          <div className="max-w-3xl mx-auto">
             <h2 className="text-4xl md:text-5xl font-bold mb-8">Cómo Mejorar tu Posicionamiento Local Hoy</h2>
             <p className="text-xl text-gray-600 mb-12">
-                ¿Listo para que tu negocio domine tu zona? Optimizamos tu web, mejoramos tu perfil y superamos a la competencia para convertir búsquedas en clientes reales.
+                ¿Listo para que tu negocio domine tu zona? <Link to="/diseno-web" className="text-black font-medium underline decoration-gray-300 hover:decoration-black transition-all">Optimizamos tu web</Link>, mejoramos tu perfil y superamos a la competencia para convertir búsquedas en clientes reales.
             </p>
             
             <motion.a 
