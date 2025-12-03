@@ -1,6 +1,6 @@
 
 import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { Plus, Minus, ArrowRight } from 'lucide-react';
 import { ServiceItem } from '../types';
 import { RevealText } from './ui/RevealText';
@@ -91,6 +91,7 @@ export const Services: React.FC = () => {
             <button 
               onClick={() => setActiveId(activeId === service.id ? null : service.id)}
               className="w-full py-8 md:py-12 flex items-start md:items-center justify-between group text-left transition-colors hover:bg-gray-50 px-2"
+              aria-expanded={activeId === service.id}
             >
               <div className="flex items-start md:items-center gap-6 md:gap-12 w-full pr-8">
                 <span className="text-sm md:text-base font-mono text-gray-400 mt-1 md:mt-0 flex-shrink-0">({service.id})</span>
@@ -103,67 +104,72 @@ export const Services: React.FC = () => {
               </span>
             </button>
             
-            <AnimatePresence>
-              {activeId === service.id && (
-                <motion.div
-                  initial={{ height: 0, opacity: 0 }}
-                  animate={{ height: "auto", opacity: 1 }}
-                  exit={{ height: 0, opacity: 0 }}
-                  transition={{ duration: 0.4, ease: [0.04, 0.62, 0.23, 0.98] }}
-                  className="overflow-hidden"
-                >
-                  <div className="pb-12 pl-0 md:pl-28 pr-4 grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
-                    {/* Content Column */}
-                    <div>
-                        <div className="text-lg text-gray-700 leading-relaxed mb-8">
-                          {Array.isArray(service.description) ? (
-                            service.description.map((para, i) => (
-                              <p key={i} className="mb-4 last:mb-0">{para}</p>
-                            ))
-                          ) : (
-                            <p>{service.description}</p>
-                          )}
-                        </div>
-                        
-                        {service.details && service.details.length > 0 && (
-                          <ul className="space-y-4 mb-8">
-                            {service.details.map((detail, idx) => (
-                              <li key={idx} className="flex items-start gap-3 text-gray-600">
-                                <div className="w-1.5 h-1.5 bg-black rounded-full mt-2" />
-                                <span>{detail}</span>
-                              </li>
-                            ))}
-                          </ul>
+            {/* 
+                SEO CHANGE: Removed AnimatePresence and conditional rendering.
+                Content is now always in DOM, toggled via height/opacity animation.
+            */}
+            <motion.div
+                initial={false}
+                animate={{ 
+                    height: activeId === service.id ? "auto" : 0,
+                    opacity: activeId === service.id ? 1 : 0
+                }}
+                transition={{ duration: 0.4, ease: [0.04, 0.62, 0.23, 0.98] }}
+                className="overflow-hidden"
+            >
+                <div className="pb-12 pl-0 md:pl-28 pr-4 grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
+                {/* Content Column */}
+                <div>
+                    <div className="text-lg text-gray-700 leading-relaxed mb-8">
+                        {Array.isArray(service.description) ? (
+                        service.description.map((para, i) => (
+                            <p key={i} className="mb-4 last:mb-0">{para}</p>
+                        ))
+                        ) : (
+                        <p>{service.description}</p>
                         )}
-                        
-                        <button 
-                          onClick={handleScrollToContact}
-                          className="group inline-flex items-center gap-2 px-6 py-3 bg-black text-white rounded-full font-medium text-sm hover:bg-gray-800 transition-all duration-300"
-                        >
-                          Solicitar Presupuesto
-                          <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-                        </button>
                     </div>
-
-                    {/* Image Column - Animated Slide In */}
-                    <motion.div 
-                        initial={{ opacity: 0, x: 50 }}
-                        animate={{ opacity: 1, x: 0 }}
-                        transition={{ duration: 0.5, delay: 0.2, ease: "easeOut" }}
-                        className="relative h-64 md:h-96 w-full rounded-3xl overflow-hidden bg-gray-100 shadow-2xl"
+                    
+                    {service.details && service.details.length > 0 && (
+                        <ul className="space-y-4 mb-8">
+                        {service.details.map((detail, idx) => (
+                            <li key={idx} className="flex items-start gap-3 text-gray-600">
+                            <div className="w-1.5 h-1.5 bg-black rounded-full mt-2" />
+                            <span>{detail}</span>
+                            </li>
+                        ))}
+                        </ul>
+                    )}
+                    
+                    <button 
+                        onClick={handleScrollToContact}
+                        className="group inline-flex items-center gap-2 px-6 py-3 bg-black text-white rounded-full font-medium text-sm hover:bg-gray-800 transition-all duration-300"
                     >
-                         <img 
-                            src={service.image} 
-                            alt={service.title}
-                            className="w-full h-full object-cover transform hover:scale-105 transition-transform duration-700"
-                         />
-                         {/* Subtle Overlay */}
-                         <div className="absolute inset-0 bg-black/5 pointer-events-none" />
-                    </motion.div>
-                  </div>
+                        Solicitar Presupuesto
+                        <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+                    </button>
+                </div>
+
+                {/* Image Column - Animated Slide In */}
+                <motion.div 
+                    initial={{ opacity: 0, x: 50 }}
+                    animate={{ 
+                        opacity: activeId === service.id ? 1 : 0, 
+                        x: activeId === service.id ? 0 : 50 
+                    }}
+                    transition={{ duration: 0.5, delay: 0.2, ease: "easeOut" }}
+                    className="relative h-64 md:h-96 w-full rounded-3xl overflow-hidden bg-gray-100 shadow-2xl"
+                >
+                        <img 
+                        src={service.image} 
+                        alt={service.title}
+                        className="w-full h-full object-cover transform hover:scale-105 transition-transform duration-700"
+                        />
+                        {/* Subtle Overlay */}
+                        <div className="absolute inset-0 bg-black/5 pointer-events-none" />
                 </motion.div>
-              )}
-            </AnimatePresence>
+                </div>
+            </motion.div>
           </div>
         ))}
         <div className="border-t border-gray-200" />

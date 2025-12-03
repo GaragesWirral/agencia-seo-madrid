@@ -134,26 +134,28 @@ export const AboutPage: React.FC = () => {
                         <button 
                             onClick={() => setOpenFaq(openFaq === index ? null : index)}
                             className="w-full flex items-center justify-between p-6 text-left"
+                            aria-expanded={openFaq === index}
                         >
                             <span className="font-bold text-lg text-gray-900 pr-8">{faq.question}</span>
                             <span className={`p-2 rounded-full border transition-colors flex-shrink-0 ${openFaq === index ? 'bg-black text-white border-black' : 'bg-gray-50 text-gray-400 border-gray-200'}`}>
                                 {openFaq === index ? <Minus className="w-4 h-4" /> : <Plus className="w-4 h-4" />}
                             </span>
                         </button>
-                        <AnimatePresence>
-                            {openFaq === index && (
-                                <motion.div
-                                    initial={{ height: 0, opacity: 0 }}
-                                    animate={{ height: "auto", opacity: 1 }}
-                                    exit={{ height: 0, opacity: 0 }}
-                                    transition={{ duration: 0.3 }}
-                                >
-                                    <div className="px-6 pb-6 text-gray-600 leading-relaxed border-t border-gray-100 pt-4">
-                                        {faq.answer}
-                                    </div>
-                                </motion.div>
-                            )}
-                        </AnimatePresence>
+                        
+                        {/* SEO CHANGE: Persistent DOM content for FAQs */}
+                        <motion.div
+                            initial={false}
+                            animate={{ 
+                                height: openFaq === index ? "auto" : 0,
+                                opacity: openFaq === index ? 1 : 0
+                            }}
+                            transition={{ duration: 0.3 }}
+                            className="overflow-hidden"
+                        >
+                            <div className="px-6 pb-6 text-gray-600 leading-relaxed border-t border-gray-100 pt-4">
+                                {faq.answer}
+                            </div>
+                        </motion.div>
                     </div>
                 ))}
             </div>

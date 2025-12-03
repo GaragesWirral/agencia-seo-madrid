@@ -244,23 +244,22 @@ export const SeoPage: React.FC = () => {
                         {service.summary}
                     </p>
 
-                    <AnimatePresence>
-                        {expandedService === service.id && (
-                            <motion.div
-                                initial={{ height: 0, opacity: 0 }}
-                                animate={{ height: "auto", opacity: 1 }}
-                                exit={{ height: 0, opacity: 0 }}
-                                transition={{ duration: 0.3 }}
-                                className="overflow-hidden"
-                            >
-                                <div className="pt-4 mt-4 border-t border-gray-100">
-                                    <p className="text-gray-800 text-base leading-relaxed">
-                                        {service.description}
-                                    </p>
-                                </div>
-                            </motion.div>
-                        )}
-                    </AnimatePresence>
+                    {/* SEO CHANGE: Persistent DOM content */}
+                    <motion.div
+                        initial={false}
+                        animate={{ 
+                            height: expandedService === service.id ? "auto" : 0,
+                            opacity: expandedService === service.id ? 1 : 0
+                        }}
+                        transition={{ duration: 0.3 }}
+                        className="overflow-hidden"
+                    >
+                        <div className="pt-4 mt-4 border-t border-gray-100">
+                            <p className="text-gray-800 text-base leading-relaxed">
+                                {service.description}
+                            </p>
+                        </div>
+                    </motion.div>
                  </motion.div>
                ))}
             </div>
