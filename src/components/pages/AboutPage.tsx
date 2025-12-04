@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { RevealText } from '../ui/RevealText';
@@ -41,6 +40,24 @@ export const AboutPage: React.FC = () => {
     if (metaDescription) {
       metaDescription.setAttribute('content', "Conoce a Joseph Gough y al equipo detrás de Organic Pulse SEO. Expertos en diseño web y posicionamiento SEO en Madrid con enfoque técnico.");
     }
+
+    // Robots
+    let metaRobots = document.querySelector("meta[name='robots']") as HTMLMetaElement;
+    if (!metaRobots) {
+      metaRobots = document.createElement('meta');
+      metaRobots.name = 'robots';
+      document.head.appendChild(metaRobots);
+    }
+    metaRobots.content = "follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large";
+
+    // Canonical
+    let linkCanonical = document.querySelector("link[rel='canonical']") as HTMLLinkElement;
+    if (!linkCanonical) {
+      linkCanonical = document.createElement('link');
+      linkCanonical.rel = 'canonical';
+      document.head.appendChild(linkCanonical);
+    }
+    linkCanonical.href = "https://www.agencia-seomadrid.com/sobre-nosotros";
 
     return () => {
       document.title = previousTitle;

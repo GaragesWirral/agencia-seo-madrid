@@ -1,4 +1,3 @@
-
 import React, { useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { RevealText } from '../ui/RevealText';
@@ -18,6 +17,24 @@ export const LocalSeoPage: React.FC = () => {
     if (metaDescription) {
       metaDescription.setAttribute('content', "SEO Local en Madrid. Mejora el posicionamiento y visibilidad de tu sitio web en la búsqueda local. Optimizar Google My Business con una agencia SEO local para mejores resultados.");
     }
+
+    // Robots
+    let metaRobots = document.querySelector("meta[name='robots']") as HTMLMetaElement;
+    if (!metaRobots) {
+      metaRobots = document.createElement('meta');
+      metaRobots.name = 'robots';
+      document.head.appendChild(metaRobots);
+    }
+    metaRobots.content = "follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large";
+
+    // Canonical
+    let linkCanonical = document.querySelector("link[rel='canonical']") as HTMLLinkElement;
+    if (!linkCanonical) {
+      linkCanonical = document.createElement('link');
+      linkCanonical.rel = 'canonical';
+      document.head.appendChild(linkCanonical);
+    }
+    linkCanonical.href = "https://www.agencia-seomadrid.com/seo-local";
 
     // Restore previous values on cleanup (unmount)
     return () => {

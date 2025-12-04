@@ -1,10 +1,30 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { RevealText } from '../ui/RevealText';
 import { BarChart3, Target, MousePointer2, PieChart, TrendingUp, DollarSign, Search } from 'lucide-react';
 import { Contact } from '../Contact';
 
 export const GoogleAdsPage: React.FC = () => {
+  useEffect(() => {
+    // Robots
+    let metaRobots = document.querySelector("meta[name='robots']") as HTMLMetaElement;
+    if (!metaRobots) {
+      metaRobots = document.createElement('meta');
+      metaRobots.name = 'robots';
+      document.head.appendChild(metaRobots);
+    }
+    metaRobots.content = "follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large";
+
+    // Canonical
+    let linkCanonical = document.querySelector("link[rel='canonical']") as HTMLLinkElement;
+    if (!linkCanonical) {
+      linkCanonical = document.createElement('link');
+      linkCanonical.rel = 'canonical';
+      document.head.appendChild(linkCanonical);
+    }
+    linkCanonical.href = "https://www.agencia-seomadrid.com/google-ads";
+  }, []);
+
   return (
     <div className="pt-20">
       {/* Hero Section */}

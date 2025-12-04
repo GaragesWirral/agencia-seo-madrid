@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { RevealText } from '../ui/RevealText';
@@ -91,6 +90,24 @@ export const BlogPage: React.FC = () => {
     if (metaDescription) {
       metaDescription.setAttribute('content', "Blog de marketing digital, SEO y diseño web. Consejos, estrategias y novedades para hacer crecer tu negocio online.");
     }
+
+    // Robots
+    let metaRobots = document.querySelector("meta[name='robots']") as HTMLMetaElement;
+    if (!metaRobots) {
+      metaRobots = document.createElement('meta');
+      metaRobots.name = 'robots';
+      document.head.appendChild(metaRobots);
+    }
+    metaRobots.content = "follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large";
+
+    // Canonical
+    let linkCanonical = document.querySelector("link[rel='canonical']") as HTMLLinkElement;
+    if (!linkCanonical) {
+      linkCanonical = document.createElement('link');
+      linkCanonical.rel = 'canonical';
+      document.head.appendChild(linkCanonical);
+    }
+    linkCanonical.href = "https://www.agencia-seomadrid.com/blog";
 
     return () => {
       document.title = previousTitle;
