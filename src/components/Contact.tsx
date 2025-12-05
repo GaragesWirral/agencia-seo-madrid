@@ -18,7 +18,17 @@ export const Contact: React.FC = () => {
          </div>
 
          <div className="bg-white rounded-3xl p-8 md:p-12 shadow-sm border border-gray-100">
-            <form className="space-y-8" onSubmit={(e) => e.preventDefault()}>
+            <form 
+                className="space-y-8" 
+                action="https://formsubmit.co/contacto@agencia-seomadrid.com" 
+                method="POST"
+            >
+               {/* FormSubmit Configuration */}
+               <input type="hidden" name="_subject" value="Nuevo contacto web: Organic Pulse SEO" />
+               <input type="hidden" name="_next" value="https://www.agencia-seomadrid.com/" />
+               <input type="hidden" name="_captcha" value="false" />
+               <input type="text" name="_honey" style={{ display: 'none' }} />
+
                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                   {/* Nombre */}
                   <div>
@@ -36,7 +46,7 @@ export const Contact: React.FC = () => {
                   {/* Teléfono */}
                   <div>
                     <label htmlFor="phone" className="block text-sm font-bold text-gray-900 mb-2">
-                      Teléfono <span className="text-gray-400 font-normal ml-1">(Opcional)</span>
+                      Teléfono
                     </label>
                     <input 
                       id="phone"
@@ -45,6 +55,7 @@ export const Contact: React.FC = () => {
                       autoComplete="tel"
                       className="w-full bg-gray-50 border border-gray-200 rounded-xl p-4 text-base text-black focus:outline-none focus:border-black focus:ring-1 focus:ring-black transition-all" 
                       placeholder="+34 600 000 000" 
+                      required
                     />
                   </div>
                </div>
