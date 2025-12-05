@@ -1,12 +1,53 @@
 
-import React from 'react';
-import { Send } from 'lucide-react';
+import React, { useState } from 'react';
+import { Send, Loader2 } from 'lucide-react';
 import { RevealText } from './ui/RevealText';
+import { useNavigate } from 'react-router-dom';
 
 export const Contact: React.FC = () => {
-  // Calculate the redirect URL dynamically to work on both localhost and production
-  // Since we use HashRouter, we append /#/gracias
-  const nextUrl = `${window.location.origin}/#/gracias`;
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [errorMessage, setErrorMessage] = useState<string | null>(null);
+  const navigate = useNavigate();
+
+  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    setIsSubmitting(true);
+    setErrorMessage(null);
+
+    const form = event.currentTarget;
+    const data = new FormData(form);
+
+    try {
+      const response = await fetch("https://formspree.io/f/xqarlgaw", {
+        method: "POST",
+        body: data,
+        headers: {
+          'Accept': 'application/json'
+        }
+      });
+
+      if (response.ok) {
+        form.reset();
+        navigate('/gracias');
+      } else {
+        const data = await response.json();
+        if (data && typeof data === 'object' && 'errors' in data) {
+           const errors = (data as any).errors;
+           if (Array.isArray(errors)) {
+             setErrorMessage(errors.map((error: any) => error["message"]).join(", "));
+           } else {
+             setErrorMessage("Hubo un problema al enviar el formulario.");
+           }
+        } else {
+           setErrorMessage("Hubo un problema al enviar el formulario.");
+        }
+      }
+    } catch (error) {
+       setErrorMessage("Error de conexión. Por favor, verifica tu internet e inténtalo de nuevo.");
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
 
   return (
     <section id="contact" className="py-24 md:py-32 px-4 md:px-8 max-w-[1400px] mx-auto">
@@ -23,17 +64,9 @@ export const Contact: React.FC = () => {
 
          <div className="bg-white rounded-3xl p-8 md:p-12 shadow-sm border border-gray-100 relative overflow-hidden">
             <form 
-              action="https://formsubmit.co/contacto@agencia-seomadrid.com" 
-              method="POST"
+              onSubmit={handleSubmit}
               className="space-y-8"
             >
-               {/* FormSubmit Configuration */}
-               <input type="hidden" name="_subject" value="Nuevo contacto web: Organic Pulse SEO" />
-               <input type="hidden" name="_captcha" value="false" />
-               <input type="hidden" name="_template" value="table" />
-               <input type="hidden" name="_next" value={nextUrl} />
-               <input type="text" name="_honey" style={{ display: 'none' }} />
-
                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                   {/* Nombre */}
                   <div>
@@ -92,12 +125,28 @@ export const Contact: React.FC = () => {
                  />
                </div>
                
+               {errorMessage && (
+                 <div className="p-4 bg-red-50 text-red-600 rounded-xl text-sm font-medium">
+                    {errorMessage}
+                 </div>
+               )}
+
                <button 
                  type="submit" 
-                 className="w-full bg-black text-white font-bold py-5 rounded-xl hover:bg-gray-800 transition-all duration-300 flex items-center justify-center gap-2 group shadow-lg shadow-black/10"
+                 disabled={isSubmitting}
+                 className="w-full bg-black text-white font-bold py-5 rounded-xl hover:bg-gray-800 transition-all duration-300 flex items-center justify-center gap-2 group shadow-lg shadow-black/10 disabled:opacity-70 disabled:cursor-not-allowed"
                >
-                 Enviar Mensaje
-                 <Send className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                 {isSubmitting ? (
+                   <>
+                     Enviando...
+                     <Loader2 className="w-5 h-5 animate-spin" />
+                   </>
+                 ) : (
+                   <>
+                     Enviar Mensaje
+                     <Send className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                   </>
+                 )}
                </button>
             </form>
          </div>
