@@ -44,9 +44,9 @@ export const Footer: React.FC = () => {
             <div>
               <h4 className="font-bold mb-4">Social</h4>
               <ul className="space-y-2 text-gray-400 text-sm">
-                <li><a href="#" className="hover:text-white transition-colors">LinkedIn</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">Twitter / X</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">Instagram</a></li>
+                <li><a href="https://www.linkedin.com/company/110342290" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">LinkedIn</a></li>
+                <li><a href="https://x.com/organicpulseseo" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Twitter / X</a></li>
+                <li><a href="https://www.instagram.com/organicpulseseo/?igsh=OGJrdHZleG8waHgw&utm_source=qr#" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Instagram</a></li>
               </ul>
             </div>
           </div>
