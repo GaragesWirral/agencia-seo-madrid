@@ -1,3 +1,4 @@
+
 import React, { useRef, useState, useEffect } from 'react';
 import { motion, useMotionValue } from 'framer-motion';
 import { ArrowUpRight } from 'lucide-react';
@@ -17,32 +18,28 @@ const projects: Project[] = [
     title: "Database School",
     category: "EdTech Platform",
     year: "2024",
-    // Save your image as public/images/database-school.jpg
-    image: "/images/database-school.jpg" 
+    image: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1200&auto=format&fit=crop" 
   },
   {
     id: 2,
     title: "Elios Finance",
     category: "Fintech Website",
     year: "2023",
-    // Save your image as public/images/elios-finance.jpg
-    image: "/images/elios-finance.jpg" 
+    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1200&auto=format&fit=crop" 
   },
   {
     id: 3,
     title: "Webflow Campaign",
     category: "Marketing Landing Page",
     year: "2024",
-    // Save your image as public/images/webflow-campaign.jpg
-    image: "/images/webflow-campaign.jpg" 
+    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1200&auto=format&fit=crop" 
   },
   {
     id: 4,
     title: "Transform 9",
     category: "AI Healthcare SaaS",
     year: "2024",
-    // Save your image as public/images/transform-9.jpg
-    image: "/images/transform-9.jpg" 
+    image: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=1200&auto=format&fit=crop" 
   }
 ];
 
