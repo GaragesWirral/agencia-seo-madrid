@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Instagram, Linkedin, X as XIcon } from 'lucide-react';
+import { Instagram, Linkedin, X as XIcon, Mail, Phone } from 'lucide-react';
 
 export const Footer: React.FC = () => {
   const handleContactClick = (e: React.MouseEvent) => {
@@ -79,12 +79,14 @@ export const Footer: React.FC = () => {
               <h4 className="font-bold mb-4">Contacto</h4>
               <ul className="space-y-2 text-gray-400 text-sm">
                 <li>
-                  <a href="mailto:contacto@agencia-seomadrid.com" className="hover:text-white transition-colors">
+                  <a href="mailto:contacto@agencia-seomadrid.com" className="flex items-center gap-2 hover:text-white transition-colors">
+                    <Mail className="w-4 h-4" />
                     contacto@agencia-seomadrid.com
                   </a>
                 </li>
                 <li>
-                  <a href="tel:+34613034482" className="hover:text-white transition-colors">
+                  <a href="tel:+34613034482" className="flex items-center gap-2 hover:text-white transition-colors">
+                    <Phone className="w-4 h-4" />
                     613 034 482
                   </a>
                 </li>
