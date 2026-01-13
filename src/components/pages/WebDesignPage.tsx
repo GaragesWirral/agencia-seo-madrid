@@ -20,28 +20,28 @@ const projects: Project[] = [
     title: "Database School",
     category: "EdTech Platform",
     year: "2024",
-    image: "/images/website-design-example-1.jpg" 
+    image: "/images/website-design-example-1.jpg"
   },
   {
     id: 2,
     title: "Elios Finance",
     category: "Fintech Website",
     year: "2023",
-    image: "/images/web-design-example-2.jpg" 
+    image: "/images/web-design-example-2.jpg"
   },
   {
     id: 3,
     title: "Webflow Campaign",
     category: "Marketing Landing Page",
     year: "2024",
-    image: "/images/web-design-example-3.jpg" 
+    image: "/images/web-design-example-3.jpg"
   },
   {
     id: 4,
     title: "Transform 9",
     category: "AI Healthcare SaaS",
     year: "2024",
-    image: "/images/web-design-example-4.jpg" 
+    image: "/images/web-design-example-4.jpg"
   }
 ];
 
@@ -54,7 +54,6 @@ export const WebDesignPage: React.FC = () => {
     const previousTitle = document.title;
     const metaDescription = document.querySelector('meta[name="description"]');
     const previousDescription = metaDescription?.getAttribute('content') || "";
-
     document.title = "Diseño Web Madrid";
     if (metaDescription) {
       metaDescription.setAttribute('content', "Diseño Web Madrid. Creamos tu página web y tienda online. Impulsa tu negocio online con el mejor diseño web en Madrid y posicionamiento SEO.");
@@ -78,7 +77,6 @@ export const WebDesignPage: React.FC = () => {
     }
     linkCanonical.href = "https://www.agencia-seomadrid.com/diseno-web";
 
-
     // Carousel Width Calculation
     const updateWidth = () => {
         if (carousel.current) {
@@ -90,10 +88,10 @@ export const WebDesignPage: React.FC = () => {
 
     // Initial calculation
     updateWidth();
-    
+   
     // Recalculate on resize
     window.addEventListener('resize', updateWidth);
-    
+   
     // Safety checks for layout shifts (ensures width is correct after rendering)
     const timer1 = setTimeout(updateWidth, 100);
     const timer2 = setTimeout(updateWidth, 500);
@@ -105,6 +103,7 @@ export const WebDesignPage: React.FC = () => {
         if (metaDescription) {
             metaDescription.setAttribute('content', previousDescription);
         }
+
         // Cleanup Carousel
         window.removeEventListener('resize', updateWidth);
         clearTimeout(timer1);
@@ -171,28 +170,27 @@ export const WebDesignPage: React.FC = () => {
                 </div>
             </div>
         </div>
-
         <div className="pl-4 md:pl-8">
             <motion.div ref={carousel} className="cursor-grab active:cursor-grabbing overflow-hidden">
-                <motion.div 
-                    drag="x" 
-                    dragConstraints={{ right: 0, left: -width }} 
+                <motion.div
+                    drag="x"
+                    dragConstraints={{ right: 0, left: -width }}
                     whileTap={{ cursor: "grabbing" }}
                     dragElastic={0.2}
                     dragTransition={{ bounceStiffness: 600, bounceDamping: 20 }}
                     className="flex gap-8 md:gap-12 pr-8 md:pr-12"
                 >
                     {projects.map((project) => (
-                    <motion.div 
-                        key={project.id} 
+                    <motion.div
+                        key={project.id}
                         className="min-w-[85vw] md:min-w-[700px] relative group"
                     >
                         <div className="relative overflow-hidden rounded-3xl aspect-[16/10] border border-gray-200 bg-white shadow-lg group-hover:shadow-2xl transition-all duration-500">
                             <div className="absolute inset-0 bg-black/0 group-hover:bg-black/0 transition-colors duration-500 z-10 pointer-events-none" />
-                            <img 
-                                src={project.image} 
-                                alt={project.title} 
-                                className="w-full h-full object-cover object-top transition-transform duration-1000 group-hover:scale-105 pointer-events-none select-none" 
+                            <img
+                                src={project.image}
+                                alt={project.title}
+                                className="w-full h-full object-contain transition-transform duration-1000 group-hover:scale-105 pointer-events-none select-none"
                             />
                         </div>
                     </motion.div>
@@ -200,15 +198,14 @@ export const WebDesignPage: React.FC = () => {
                 </motion.div>
             </motion.div>
         </div>
-
         {/* Small CTA after slider */}
         <div className="mt-20 text-center px-4">
-            <a 
-                href="#contact" 
+            <a
+                href="#contact"
                 onClick={handleScrollToContact}
                 className="inline-flex items-center gap-3 text-lg font-medium hover:text-gray-600 transition-colors group cursor-pointer"
             >
-                <span className="border-b-2 border-black pb-1 group-hover:border-gray-600">¿Te gustan nuestros proyectos? Solicita Presupuesto</span> 
+                <span className="border-b-2 border-black pb-1 group-hover:border-gray-600">¿Te gustan nuestros proyectos? Solicita Presupuesto</span>
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </a>
         </div>
@@ -225,13 +222,13 @@ export const WebDesignPage: React.FC = () => {
                 </h2>
                 <div className="space-y-8 text-xl text-gray-600 leading-relaxed mb-16">
                     <p>
-                        Ofrecemos diseño web profesional, diseño web a medida y desarrollo en WordPress para empresas que buscan una web profesional, elegante y efectiva. 
+                        Ofrecemos diseño web profesional, diseño web a medida y desarrollo en WordPress para empresas que buscan una web profesional, elegante y efectiva.
                     </p>
                     <p>
                         Nuestro equipo de diseñadores web crea experiencias digitales fáciles de usar, accesibles y optimizadas para buscadores.
                     </p>
                 </div>
-                
+               
                 <div className="space-y-16">
                     {[
                         {
@@ -250,7 +247,7 @@ export const WebDesignPage: React.FC = () => {
                             desc: "Diseño visual coherente con tu identidad de marca, web responsive y experiencia del usuario superior."
                         }
                     ].map((feature, idx) => (
-                        <motion.div 
+                        <motion.div
                             key={idx}
                             initial={{ opacity: 0, y: 30 }}
                             whileInView={{ opacity: 1, y: 0 }}
@@ -274,11 +271,11 @@ export const WebDesignPage: React.FC = () => {
             <div className="lg:pt-20">
                 <div className="bg-gray-50 rounded-[2.5rem] p-8 md:p-14 sticky top-32 shadow-sm border border-gray-100">
                     <h3 className="text-3xl font-bold mb-12">Proceso de Diseño Web Madrid</h3>
-                    
+                   
                     <div className="space-y-8">
                         {processSteps.map((item, i) => (
-                            <motion.div 
-                                key={i} 
+                            <motion.div
+                                key={i}
                                 initial={{ opacity: 0, x: 20 }}
                                 whileInView={{ opacity: 1, x: 0 }}
                                 viewport={{ once: true }}
@@ -289,7 +286,7 @@ export const WebDesignPage: React.FC = () => {
                                 <span className="text-3xl font-bold text-gray-300 font-grotesk group-hover:text-black transition-colors duration-300 w-12">
                                     {String(i + 1).padStart(2, '0')}
                                 </span>
-                                
+                               
                                 <h4 className="text-lg md:text-xl font-medium text-gray-900 leading-tight group-hover:translate-x-2 transition-transform duration-300">
                                     {item.title}
                                 </h4>
@@ -310,8 +307,8 @@ export const WebDesignPage: React.FC = () => {
             <p className="text-xl md:text-2xl text-gray-400 mb-12 max-w-3xl mx-auto leading-relaxed font-light">
                 Creamos sitios web, desarrollamos tu web y optimizamos tu posicionamiento SEO para ayudarte a alcanzar tus objetivos online. ¿Listo para tener una web de calidad?
             </p>
-            <motion.a 
-                href="#contact" 
+            <motion.a
+                href="#contact"
                 onClick={handleScrollToContact}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
