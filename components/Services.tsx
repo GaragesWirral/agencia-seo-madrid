@@ -123,22 +123,18 @@ export const Services: React.FC = () => {
                         </button>
                     </div>
 
-                    {/* Image Column - Interactive zoom to see full details */}
+                    {/* Image Column - Show full image with contain */}
                     <motion.div 
                         initial={{ opacity: 0, x: 50 }}
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ duration: 0.5, delay: 0.2, ease: "easeOut" }}
-                        className="relative h-64 md:h-96 w-full rounded-3xl overflow-hidden bg-gradient-to-br from-gray-50 to-gray-100 shadow-2xl group cursor-pointer"
+                        className="relative h-64 md:h-96 w-full rounded-3xl overflow-hidden bg-white shadow-2xl flex items-center justify-center p-4"
                     >
                          <img 
                             src={service.image} 
                             alt={service.title}
-                            className="absolute inset-0 w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-110"
+                            className="max-w-full max-h-full w-auto h-auto object-contain"
                          />
-                         {/* Hover hint */}
-                         <div className="absolute bottom-4 right-4 bg-black/70 text-white text-xs px-3 py-1.5 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                           Hover para ver más
-                         </div>
                     </motion.div>
                   </div>
                 </motion.div>
