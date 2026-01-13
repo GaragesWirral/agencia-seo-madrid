@@ -180,21 +180,24 @@ export const WebDesignPage: React.FC = () => {
                     dragTransition={{ bounceStiffness: 600, bounceDamping: 20 }}
                     className="flex gap-8 md:gap-12 pr-8 md:pr-12"
                 >
-                    {projects.map((project) => (
-                    <motion.div
-                        key={project.id}
-                        className="min-w-[85vw] md:min-w-[700px] relative group"
-                    >
-                        <div className="relative overflow-hidden rounded-3xl aspect-[16/10] border border-gray-200 bg-white shadow-lg group-hover:shadow-2xl transition-all duration-500">
-                            <div className="absolute inset-0 bg-black/0 group-hover:bg-black/0 transition-colors duration-500 z-10 pointer-events-none" />
-                            <img
-                                src={project.image}
-                                alt={project.title}
-                                className="w-full h-full object-contain transition-transform duration-1000 group-hover:scale-105 pointer-events-none select-none"
-                            />
-                        </div>
-                    </motion.div>
-                    ))}
+                    {projects.map((project) => {
+                      const objectClass = (project.id === 3 || project.id === 4) ? "object-contain" : "object-cover";
+                      return (
+                      <motion.div
+                          key={project.id}
+                          className="min-w-[85vw] md:min-w-[700px] relative group"
+                      >
+                          <div className="relative overflow-hidden rounded-3xl aspect-[16/10] border border-gray-200 bg-white shadow-lg group-hover:shadow-2xl transition-all duration-500">
+                              <div className="absolute inset-0 bg-black/0 group-hover:bg-black/0 transition-colors duration-500 z-10 pointer-events-none" />
+                              <img
+                                  src={project.image}
+                                  alt={project.title}
+                                  className={`w-full h-full ${objectClass} transition-transform duration-1000 group-hover:scale-105 pointer-events-none select-none`}
+                              />
+                          </div>
+                      </motion.div>
+                      );
+                    })}
                 </motion.div>
             </motion.div>
         </div>
