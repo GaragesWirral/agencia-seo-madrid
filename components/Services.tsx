@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Plus, Minus, ArrowRight } from 'lucide-react';
@@ -16,7 +15,7 @@ const services: ServiceItem[] = [
       "Formularios optimizados que generan más leads",
       "Diseño responsive perfecto en todos los dispositivos"
     ],
-    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2426&auto=format&fit=crop" // Website/Analytics image
+    image: "/images/Diseño-web-que-convierte.png" // Your local image
   },
   {
     id: "02",
@@ -28,7 +27,7 @@ const services: ServiceItem[] = [
       "Link Building & PR: Aumentamos la autoridad de tu dominio con enlaces de calidad",
       "SEO Local: Dominamos las búsquedas locales de tu área"
     ],
-    image: "https://images.unsplash.com/photo-1572021335469-31706a17aaef?q=80&w=2670&auto=format&fit=crop" // SEO/Growth image
+    image: "https://images.unsplash.com/photo-1572021335469-31706a17aaef?q=80&w=2670&auto=format&fit=crop"
   },
   {
     id: "03",
@@ -40,7 +39,7 @@ const services: ServiceItem[] = [
       "Remarketing inteligente para convertir visitantes en clientes",
       "Optimización continua basada en datos reales"
     ],
-    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2670&auto=format&fit=crop" // Analytics/Ads image
+    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2670&auto=format&fit=crop"
   }
 ];
 
@@ -124,7 +123,7 @@ export const Services: React.FC = () => {
                         </button>
                     </div>
 
-                    {/* Image Column - Animated Slide In */}
+                    {/* Image Column - Fixed to properly contain and display the image */}
                     <motion.div 
                         initial={{ opacity: 0, x: 50 }}
                         animate={{ opacity: 1, x: 0 }}
@@ -134,7 +133,7 @@ export const Services: React.FC = () => {
                          <img 
                             src={service.image} 
                             alt={service.title}
-                            className="w-full h-full object-cover transform hover:scale-105 transition-transform duration-700"
+                            className="w-full h-full object-contain transform hover:scale-105 transition-transform duration-700"
                          />
                          {/* Subtle Overlay */}
                          <div className="absolute inset-0 bg-black/5 pointer-events-none" />
