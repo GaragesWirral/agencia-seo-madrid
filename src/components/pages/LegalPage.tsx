@@ -1,3 +1,4 @@
+
 import React, { useEffect } from 'react';
 import { Contact } from '../Contact';
 
@@ -44,7 +45,7 @@ export const LegalPage: React.FC = () => {
                 <p className="leading-relaxed font-medium bg-gray-50 p-6 rounded-xl border border-gray-100">
                     Titular: Organic Pulse SEO<br/>
                     Domicilio: Madrid, España<br/>
-                    Email de contacto: info@organicpulse.es<br/>
+                    Email de contacto: contacto@agencia-seomadrid.com<br/>
                     Actividad: Agencia de Marketing Digital y Desarrollo Web
                 </p>
             </div>
