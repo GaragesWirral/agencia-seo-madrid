@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Plus, Minus, ArrowRight } from 'lucide-react';
@@ -84,11 +83,10 @@ export const Services: React.FC = () => {
            </div>
         </div>
       </div>
-
       <div className="flex flex-col">
         {services.map((service) => (
           <div key={service.id} className="border-t border-gray-200">
-            <button 
+            <button
               onClick={() => setActiveId(activeId === service.id ? null : service.id)}
               className="w-full py-8 md:py-12 flex items-start md:items-center justify-between group text-left transition-colors hover:bg-gray-50 px-2"
               aria-expanded={activeId === service.id}
@@ -103,14 +101,14 @@ export const Services: React.FC = () => {
                 {activeId === service.id ? <Minus className="w-5 h-5" /> : <Plus className="w-5 h-5" />}
               </span>
             </button>
-            
-            {/* 
+           
+            {/*
                 SEO CHANGE: Removed AnimatePresence and conditional rendering.
                 Content is now always in DOM, toggled via height/opacity animation.
             */}
             <motion.div
                 initial={false}
-                animate={{ 
+                animate={{
                     height: activeId === service.id ? "auto" : 0,
                     opacity: activeId === service.id ? 1 : 0
                 }}
@@ -129,7 +127,7 @@ export const Services: React.FC = () => {
                         <p>{service.description}</p>
                         )}
                     </div>
-                    
+                   
                     {service.details && service.details.length > 0 && (
                         <ul className="space-y-4 mb-8">
                         {service.details.map((detail, idx) => (
@@ -140,8 +138,8 @@ export const Services: React.FC = () => {
                         ))}
                         </ul>
                     )}
-                    
-                    <button 
+                   
+                    <button
                         onClick={handleScrollToContact}
                         className="group inline-flex items-center gap-2 px-6 py-3 bg-black text-white rounded-full font-medium text-sm hover:bg-gray-800 transition-all duration-300"
                     >
@@ -149,21 +147,20 @@ export const Services: React.FC = () => {
                         <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
                     </button>
                 </div>
-
                 {/* Image Column - Animated Slide In */}
-                <motion.div 
+                <motion.div
                     initial={{ opacity: 0, x: 50 }}
-                    animate={{ 
-                        opacity: activeId === service.id ? 1 : 0, 
-                        x: activeId === service.id ? 0 : 50 
+                    animate={{
+                        opacity: activeId === service.id ? 1 : 0,
+                        x: activeId === service.id ? 0 : 50
                     }}
                     transition={{ duration: 0.5, delay: 0.2, ease: "easeOut" }}
                     className="relative h-64 md:h-96 w-full rounded-3xl overflow-hidden bg-gray-100 shadow-2xl"
                 >
-                        <img 
-                        src={service.image} 
+                        <img
+                        src={service.image}
                         alt={service.title}
-                        className="w-full h-full object-cover transform hover:scale-105 transition-transform duration-700"
+                        className="w-full h-full object-contain transform hover:scale-105 transition-transform duration-700"
                         />
                         {/* Subtle Overlay */}
                         <div className="absolute inset-0 bg-black/5 pointer-events-none" />
