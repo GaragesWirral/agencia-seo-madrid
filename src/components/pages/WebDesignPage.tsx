@@ -27,21 +27,21 @@ const projects: Project[] = [
     title: "Elios Finance",
     category: "Fintech Website",
     year: "2023",
-    image: "/images/website-design-example-2.jpg" 
+    image: "/images/web-design-example-2.jpg" 
   },
   {
     id: 3,
     title: "Webflow Campaign",
     category: "Marketing Landing Page",
     year: "2024",
-    image: "/images/website-design-example-3.jpg" 
+    image: "/images/web-design-example-3.jpg" 
   },
   {
     id: 4,
     title: "Transform 9",
     category: "AI Healthcare SaaS",
     year: "2024",
-    image: "/images/website-design-example-4.jpg" 
+    image: "/images/web-design-example-4.jpg" 
   }
 ];
 
