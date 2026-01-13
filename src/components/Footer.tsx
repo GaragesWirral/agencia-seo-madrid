@@ -1,6 +1,7 @@
 
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { Instagram, Linkedin, X as XIcon } from 'lucide-react';
 
 export const Footer: React.FC = () => {
   const handleContactClick = (e: React.MouseEvent) => {
@@ -11,16 +12,49 @@ export const Footer: React.FC = () => {
     }
   };
 
+  const socialLinks = [
+    {
+      icon: <Linkedin className="w-5 h-5" />,
+      href: "https://www.linkedin.com/company/110342290",
+      label: "LinkedIn"
+    },
+    {
+      icon: <XIcon className="w-5 h-5" />,
+      href: "https://x.com/organicpulseseo",
+      label: "Twitter / X"
+    },
+    {
+      icon: <Instagram className="w-5 h-5" />,
+      href: "https://www.instagram.com/organicpulseseo/?igsh=OGJrdHZleG8waHgw&utm_source=qr#",
+      label: "Instagram"
+    }
+  ];
+
   return (
     <footer className="bg-[#111] text-white pt-20 pb-10 px-4 md:px-8">
       <div className="max-w-[1400px] mx-auto">
         <div className="flex flex-col md:flex-row justify-between items-start mb-20 gap-10">
           <div>
             <h2 className="text-2xl font-bold uppercase tracking-tighter mb-4">OrganicPulse.</h2>
-            <p className="text-gray-400 max-w-xs">
+            <p className="text-gray-400 max-w-xs mb-6">
               Agencia de posicionamiento web estratégico. <br/>
               Diseñando el futuro digital de las empresas de Madrid.
             </p>
+            {/* Social Icons Section */}
+            <div className="flex gap-4">
+              {socialLinks.map((social) => (
+                <a 
+                  key={social.label}
+                  href={social.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={social.label}
+                  className="text-gray-500 hover:text-white transition-colors duration-300 bg-gray-900/50 p-2.5 rounded-full border border-gray-800 hover:border-gray-600"
+                >
+                  {social.icon}
+                </a>
+              ))}
+            </div>
           </div>
           
           <div className="flex gap-16 flex-wrap">
