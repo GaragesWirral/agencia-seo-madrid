@@ -94,7 +94,7 @@ export const AboutPage: React.FC = () => {
             <div className="w-full md:w-1/2 relative">
                 <div className="aspect-[3/4] md:aspect-square rounded-[2rem] overflow-hidden bg-gray-100 relative shadow-2xl">
                     <img 
-                        src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=1200&auto=format&fit=crop" 
+                        src="/images/joseph-gough-profile.jpg" 
                         alt="Joseph Gough" 
                         className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700"
                     />

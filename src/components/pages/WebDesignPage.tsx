@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
 import { RevealText } from '../ui/RevealText';
@@ -82,34 +83,23 @@ export const WebDesignPage: React.FC = () => {
     // Carousel Width Calculation
     const updateWidth = () => {
         if (carousel.current) {
-            // Calculate total scrollable width minus the visible width
-            // This determines how far left we can drag the content
             setWidth(carousel.current.scrollWidth - carousel.current.offsetWidth);
         }
     };
 
-    // Initial calculation
     updateWidth();
-    
-    // Recalculate on resize
     window.addEventListener('resize', updateWidth);
-    
-    // Safety checks for layout shifts (ensures width is correct after rendering)
     const timer1 = setTimeout(updateWidth, 100);
     const timer2 = setTimeout(updateWidth, 500);
-    const timer3 = setTimeout(updateWidth, 1000);
 
     return () => {
-        // Cleanup SEO
         document.title = previousTitle;
         if (metaDescription) {
             metaDescription.setAttribute('content', previousDescription);
         }
-        // Cleanup Carousel
         window.removeEventListener('resize', updateWidth);
         clearTimeout(timer1);
         clearTimeout(timer2);
-        clearTimeout(timer3);
     };
   }, []);
 
@@ -156,7 +146,7 @@ export const WebDesignPage: React.FC = () => {
         </div>
       </section>
 
-      {/* Draggable Project Slider - Off-White Background to stand out */}
+      {/* Slider Section */}
       <section className="py-36 md:py-48 bg-gray-50 text-black overflow-hidden border-y border-gray-200">
         <div className="max-w-[1400px] mx-auto px-4 md:px-8 mb-20">
             <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
@@ -179,7 +169,6 @@ export const WebDesignPage: React.FC = () => {
                     dragConstraints={{ right: 0, left: -width }} 
                     whileTap={{ cursor: "grabbing" }}
                     dragElastic={0.2}
-                    dragTransition={{ bounceStiffness: 600, bounceDamping: 20 }}
                     className="flex gap-8 md:gap-12 pr-8 md:pr-12"
                 >
                     {projects.map((project) => (
@@ -188,7 +177,6 @@ export const WebDesignPage: React.FC = () => {
                         className="min-w-[85vw] md:min-w-[700px] relative group"
                     >
                         <div className="relative overflow-hidden rounded-3xl aspect-[16/10] border border-gray-200 bg-white shadow-lg group-hover:shadow-2xl transition-all duration-500">
-                            <div className="absolute inset-0 bg-black/0 group-hover:bg-black/0 transition-colors duration-500 z-10 pointer-events-none" />
                             <img 
                                 src={project.image} 
                                 alt={project.title} 
@@ -201,7 +189,6 @@ export const WebDesignPage: React.FC = () => {
             </motion.div>
         </div>
 
-        {/* Small CTA after slider */}
         <div className="mt-20 text-center px-4">
             <a 
                 href="#contact" 
@@ -214,10 +201,9 @@ export const WebDesignPage: React.FC = () => {
         </div>
       </section>
 
-      {/* Main Content / Benefits & Process - White Background */}
+      {/* Main Content Section */}
       <section className="py-36 md:py-48 px-4 md:px-8 max-w-[1400px] mx-auto bg-white">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-24 lg:gap-32">
-            {/* Left Column: Benefits */}
             <div className="flex flex-col justify-center">
                 <span className="text-xs font-mono border border-gray-200 text-gray-500 px-3 py-1 rounded-full uppercase mb-8 self-start">Propuesta de Valor</span>
                 <h2 className="text-4xl md:text-6xl font-bold mb-10 tracking-tight leading-[1.1]">
@@ -254,7 +240,7 @@ export const WebDesignPage: React.FC = () => {
                             key={idx}
                             initial={{ opacity: 0, y: 30 }}
                             whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true, margin: "-50px" }}
+                            viewport={{ once: true }}
                             transition={{ duration: 0.6, delay: idx * 0.1 }}
                             className="flex gap-8 items-start group"
                         >
@@ -270,11 +256,9 @@ export const WebDesignPage: React.FC = () => {
                 </div>
             </div>
 
-            {/* Right Column: Process (Simplified List) */}
             <div className="lg:pt-20">
                 <div className="bg-gray-50 rounded-[2.5rem] p-8 md:p-14 sticky top-32 shadow-sm border border-gray-100">
                     <h3 className="text-3xl font-bold mb-12">Proceso de Diseño Web Madrid</h3>
-                    
                     <div className="space-y-8">
                         {processSteps.map((item, i) => (
                             <motion.div 
@@ -285,11 +269,9 @@ export const WebDesignPage: React.FC = () => {
                                 transition={{ delay: i * 0.1 }}
                                 className="flex gap-6 items-center border-b border-gray-200 pb-6 last:border-0 last:pb-0 group"
                             >
-                                {/* Number as clean text */}
                                 <span className="text-3xl font-bold text-gray-300 font-grotesk group-hover:text-black transition-colors duration-300 w-12">
                                     {String(i + 1).padStart(2, '0')}
                                 </span>
-                                
                                 <h4 className="text-lg md:text-xl font-medium text-gray-900 leading-tight group-hover:translate-x-2 transition-transform duration-300">
                                     {item.title}
                                 </h4>
@@ -301,7 +283,7 @@ export const WebDesignPage: React.FC = () => {
         </div>
       </section>
 
-      {/* SEO CTA Section - High Contrast Break */}
+      {/* CTA Section */}
       <section className="py-32 px-4 md:px-8 bg-[#111] text-white">
          <div className="max-w-[1000px] mx-auto text-center">
             <RevealText tag="h2" className="text-4xl md:text-7xl font-bold mb-8 tracking-tighter justify-center">

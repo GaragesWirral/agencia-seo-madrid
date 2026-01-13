@@ -16,7 +16,7 @@ const services: ServiceItem[] = [
       "Formularios optimizados que generan más leads",
       "Diseño responsive perfecto en todos los dispositivos"
     ],
-    image: "https://images.unsplash.com/photo-1547658719-da2b51169166?q=80&w=1200&auto=format&fit=crop"
+    image: "/images/service-web-design.jpg"
   },
   {
     id: "02",
@@ -25,19 +25,19 @@ const services: ServiceItem[] = [
       "Nuestros servicios SEO están diseñados para hacer que tu empresa aparezca en los primeros resultados cuando tus clientes buscan tus productos o servicios. Como agencia especializada en posicionamiento web en Madrid, entendemos el algoritmo de Google y sabemos cómo optimizar tu sitio web para lograr el mejor posicionamiento posible.",
       "Trabajamos con palabras clave estratégicas que atraen a tu público objetivo y generan tráfico orgánico cualificado. Ya sea que necesites posicionamiento natural para tu blog corporativo, SEO local para tu negocio físico, o SEO internacional para expandirte globalmente, tenemos la experiencia para lograrlo."
     ],
-    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1200&auto=format&fit=crop"
+    image: "/images/service-seo.jpg"
   },
   {
     id: "03",
     title: "SEO Local: Domina tu Mercado en Madrid",
     description: "Si tienes un negocio local en Madrid, el SEO local es fundamental. Optimizamos tu presencia en Google Maps y resultados de búsqueda locales para que aparezcas cuando los clientes cercanos te buscan. Desde restaurantes hasta clínicas dentales, ayudamos a negocios locales a aumentar su visibilidad y atraer más clientes.",
-    image: "https://images.unsplash.com/photo-1520038410233-7141be7e6f97?q=80&w=1200&auto=format&fit=crop"
+    image: "/images/service-local-seo.jpg"
   },
   {
     id: "04",
     title: "Consultoría SEO y SEO y SEM Integrado",
     description: "Como consultor experto, ofrecemos consultoría SEO personalizada para empresas que buscan mejorar su posicionamiento. También integramos campañas de Google Ads (SEM) cuando tiene sentido estratégico, combinando posicionamiento orgánico y pagado para maximizar resultados.",
-    image: "https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=1200&auto=format&fit=crop"
+    image: "/images/service-consulting.jpg"
   },
   {
     id: "05",
@@ -46,13 +46,13 @@ const services: ServiceItem[] = [
       "Diseñar una página web sin pensar en SEO es un error costoso. Nuestra agencia de marketing digital crea páginas web optimizadas desde el primer día, con arquitectura web seo que facilita el rastreo de los buscadores y mejora la experiencia del usuario.",
       "Ya sea que necesites una tienda online o un sitio corporativo, diseñamos pensando en conversión y posicionamiento."
     ],
-    image: "https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?q=80&w=1200&auto=format&fit=crop"
+    image: "/images/service-seo-web-design.jpg"
   },
   {
     id: "06",
     title: "Publicidad de Pago que Funciona",
     description: "Las campañas de Google Ads complementan tu estrategia de posicionamiento SEO en Madrid, generando resultados inmediatos mientras trabajamos en tu posicionamiento orgánico a largo plazo.",
-    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1200&auto=format&fit=crop"
+    image: "/images/service-ads.jpg"
   }
 ];
 
