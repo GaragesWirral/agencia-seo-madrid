@@ -83,6 +83,21 @@ export const Footer: React.FC = () => {
                 <li><a href="https://www.instagram.com/organicpulseseo/?igsh=OGJrdHZleG8waHgw&utm_source=qr#" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Instagram</a></li>
               </ul>
             </div>
+            <div>
+              <h4 className="font-bold mb-4">Contacto</h4>
+              <ul className="space-y-2 text-gray-400 text-sm">
+                <li>
+                  <a href="mailto:contacto@agencia-seomadrid.com" className="hover:text-white transition-colors">
+                    contacto@agencia-seomadrid.com
+                  </a>
+                </li>
+                <li>
+                  <a href="tel:+34613034482" className="hover:text-white transition-colors">
+                    613 034 482
+                  </a>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
         
