@@ -39,7 +39,7 @@ const services: ServiceItem[] = [
       "Remarketing inteligente para convertir visitantes en clientes",
       "Optimización continua basada en datos reales"
     ],
-    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2670&auto=format&fit=crop"
+    image: "/images/agenciaseomadridmejoras.jpg"
   }
 ];
 
