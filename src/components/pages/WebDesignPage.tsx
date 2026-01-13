@@ -181,7 +181,7 @@ export const WebDesignPage: React.FC = () => {
                     className="flex gap-8 md:gap-12 pr-8 md:pr-12"
                 >
                     {projects.map((project) => {
-                      const objectClass = (project.id === 3 || project.id === 4) ? "object-contain" : "object-cover";
+                      const objectClass = (project.id === 3 || project.id === 4) ? "object-contain" : "object-cover object-top";
                       return (
                       <motion.div
                           key={project.id}
