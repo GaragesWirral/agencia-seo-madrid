@@ -1,4 +1,3 @@
-
 import React, { useRef, useState, useEffect } from 'react';
 import { motion, useMotionValue } from 'framer-motion';
 import { ArrowUpRight } from 'lucide-react';
@@ -18,6 +17,7 @@ const projects: Project[] = [
     title: "Database School",
     category: "EdTech Platform",
     year: "2024",
+    // Save your image as public/images/database-school.jpg
     image: "/images/database-school.jpg" 
   },
   {
@@ -25,6 +25,7 @@ const projects: Project[] = [
     title: "Elios Finance",
     category: "Fintech Website",
     year: "2023",
+    // Save your image as public/images/elios-finance.jpg
     image: "/images/elios-finance.jpg" 
   },
   {
@@ -32,6 +33,7 @@ const projects: Project[] = [
     title: "Webflow Campaign",
     category: "Marketing Landing Page",
     year: "2024",
+    // Save your image as public/images/webflow-campaign.jpg
     image: "/images/webflow-campaign.jpg" 
   },
   {
@@ -39,6 +41,7 @@ const projects: Project[] = [
     title: "Transform 9",
     category: "AI Healthcare SaaS",
     year: "2024",
+    // Save your image as public/images/transform-9.jpg
     image: "/images/transform-9.jpg" 
   }
 ];

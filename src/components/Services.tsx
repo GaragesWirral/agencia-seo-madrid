@@ -16,7 +16,7 @@ const services: ServiceItem[] = [
       "Formularios optimizados que generan más leads",
       "Diseño responsive perfecto en todos los dispositivos"
     ],
-    image: "/images/service-web-design.jpg"
+    image: "/images/Diseño-web-que-convierte.png"
   },
   {
     id: "02",
@@ -25,19 +25,19 @@ const services: ServiceItem[] = [
       "Nuestros servicios SEO están diseñados para hacer que tu empresa aparezca en los primeros resultados cuando tus clientes buscan tus productos o servicios. Como agencia especializada en posicionamiento web en Madrid, entendemos el algoritmo de Google y sabemos cómo optimizar tu sitio web para lograr el mejor posicionamiento posible.",
       "Trabajamos con palabras clave estratégicas que atraen a tu público objetivo y generan tráfico orgánico cualificado. Ya sea que necesites posicionamiento natural para tu blog corporativo, SEO local para tu negocio físico, o SEO internacional para expandirte globalmente, tenemos la experiencia para lograrlo."
     ],
-    image: "/images/service-seo.jpg"
+    image: "https://images.unsplash.com/photo-1572021335469-31706a17aaef?q=80&w=2670&auto=format&fit=crop"
   },
   {
     id: "03",
     title: "SEO Local: Domina tu Mercado en Madrid",
     description: "Si tienes un negocio local en Madrid, el SEO local es fundamental. Optimizamos tu presencia en Google Maps y resultados de búsqueda locales para que aparezcas cuando los clientes cercanos te buscan. Desde restaurantes hasta clínicas dentales, ayudamos a negocios locales a aumentar su visibilidad y atraer más clientes.",
-    image: "/images/service-local-seo.jpg"
+    image: "/images/agenciaseomadridmejoras.jpg"
   },
   {
     id: "04",
     title: "Consultoría SEO y SEO y SEM Integrado",
     description: "Como consultor experto, ofrecemos consultoría SEO personalizada para empresas que buscan mejorar su posicionamiento. También integramos campañas de Google Ads (SEM) cuando tiene sentido estratégico, combinando posicionamiento orgánico y pagado para maximizar resultados.",
-    image: "/images/service-consulting.jpg"
+    image: "https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=2670&auto=format&fit=crop"
   },
   {
     id: "05",
@@ -46,13 +46,13 @@ const services: ServiceItem[] = [
       "Diseñar una página web sin pensar en SEO es un error costoso. Nuestra agencia de marketing digital crea páginas web optimizadas desde el primer día, con arquitectura web seo que facilita el rastreo de los buscadores y mejora la experiencia del usuario.",
       "Ya sea que necesites una tienda online o un sitio corporativo, diseñamos pensando en conversión y posicionamiento."
     ],
-    image: "/images/service-seo-web-design.jpg"
+    image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=2670&auto=format&fit=crop"
   },
   {
     id: "06",
     title: "Publicidad de Pago que Funciona",
     description: "Las campañas de Google Ads complementan tu estrategia de posicionamiento SEO en Madrid, generando resultados inmediatos mientras trabajamos en tu posicionamiento orgánico a largo plazo.",
-    image: "/images/service-ads.jpg"
+    image: "/images/google-ads-resultados.png"
   }
 ];
 
@@ -104,6 +104,10 @@ export const Services: React.FC = () => {
               </span>
             </button>
             
+            {/* 
+                SEO CHANGE: Removed AnimatePresence and conditional rendering.
+                Content is now always in DOM, toggled via height/opacity animation.
+            */}
             <motion.div
                 initial={false}
                 animate={{ 
@@ -114,6 +118,7 @@ export const Services: React.FC = () => {
                 className="overflow-hidden"
             >
                 <div className="pb-12 pl-0 md:pl-28 pr-4 grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
+                {/* Content Column */}
                 <div>
                     <div className="text-lg text-gray-700 leading-relaxed mb-8">
                         {Array.isArray(service.description) ? (
@@ -145,6 +150,7 @@ export const Services: React.FC = () => {
                     </button>
                 </div>
 
+                {/* Image Column - Animated Slide In */}
                 <motion.div 
                     initial={{ opacity: 0, x: 50 }}
                     animate={{ 
@@ -159,6 +165,7 @@ export const Services: React.FC = () => {
                         alt={service.title}
                         className="w-full h-full object-cover transform hover:scale-105 transition-transform duration-700"
                         />
+                        {/* Subtle Overlay */}
                         <div className="absolute inset-0 bg-black/5 pointer-events-none" />
                 </motion.div>
                 </div>

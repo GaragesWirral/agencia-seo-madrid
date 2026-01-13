@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { RevealText } from '../ui/RevealText';
@@ -94,7 +93,7 @@ export const AboutPage: React.FC = () => {
             <div className="w-full md:w-1/2 relative">
                 <div className="aspect-[3/4] md:aspect-square rounded-[2rem] overflow-hidden bg-gray-100 relative shadow-2xl">
                     <img 
-                        src="/images/joseph-gough-profile.jpg" 
+                        src="/images/josephgough.png" 
                         alt="Joseph Gough" 
                         className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700"
                     />
@@ -160,6 +159,7 @@ export const AboutPage: React.FC = () => {
                             </span>
                         </button>
                         
+                        {/* SEO CHANGE: Persistent DOM content for FAQs */}
                         <motion.div
                             initial={false}
                             animate={{ 

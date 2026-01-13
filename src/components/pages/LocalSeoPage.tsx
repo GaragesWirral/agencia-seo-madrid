@@ -1,4 +1,3 @@
-
 import React, { useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { RevealText } from '../ui/RevealText';
@@ -131,7 +130,7 @@ export const LocalSeoPage: React.FC = () => {
                     El Local Pack se lleva la inmensa mayoría de los clics en resultados de búsqueda móviles. Para un negocio local, estar ahí no es opcional. Es captar tráfico de alta conversión.
                 </p>
                 <img 
-                    src="/images/local-seo-strategy.jpg" 
+                    src="/images/localseo.jpg" 
                     alt="SEO Local Estrategia y Posicionamiento"
                     className="w-full rounded-2xl shadow-lg border border-gray-200"
                 />
